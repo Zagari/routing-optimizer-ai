@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "routing-optimizer"
+version = "0.1.0"
+description = "VRP Route Optimizer using Genetic Algorithm - Tech Challenge FIAP"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+]
+web = [
+    "streamlit>=1.28.0",
+    "folium>=0.14.0",
+    "streamlit-folium>=0.15.0",
+    "plotly>=5.18.0",
+]
+geo = [
+    "geopy>=2.4.0",
+    "requests>=2.31.0",
+]
+llm = [
+    "openai>=1.0.0",
+]
+all = [
+    "routing-optimizer[dev,web,geo,llm]",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+markers = [
+    "integration: marks tests as integration tests (deselect with '-m \"not integration\"')",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
