@@ -29,6 +29,33 @@ uploaded_file = st.file_uploader(
 )
 
 if uploaded_file is not None:
+    # Check if this is a new file (different from previously loaded)
+    current_file_name = uploaded_file.name
+    previous_file_name = st.session_state.get("_uploaded_file_name")
+
+    if current_file_name != previous_file_name:
+        # New file detected - clear all downstream data
+        keys_to_clear = [
+            "geocoded_data",
+            "original_df",
+            "names",
+            "routes",
+            "distance_matrix",
+            "total_distance",
+            "optimization_time",
+            "fitness_history",
+            "coords",
+            "experiment_results",
+            "llm_interaction_done",
+            "chat_history",
+        ]
+        for key in keys_to_clear:
+            if key in st.session_state:
+                del st.session_state[key]
+
+        # Remember the new file name
+        st.session_state["_uploaded_file_name"] = current_file_name
+
     # Ler CSV
     try:
         df = pd.read_csv(uploaded_file, encoding="utf-8")

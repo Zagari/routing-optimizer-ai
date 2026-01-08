@@ -107,6 +107,9 @@ else:
         with st.spinner("Gerando instruções com ChatGPT..."):
             instructions = assistant.generate_driver_instructions(route_addresses, vehicle_idx + 1)
 
+        # Mark LLM interaction as done
+        st.session_state["llm_interaction_done"] = True
+
         st.markdown("---")
         st.markdown("### Instruções Geradas:")
         st.markdown(instructions)
@@ -156,6 +159,9 @@ if st.button("📈 Gerar Relatório de Eficiência"):
             total_distance=meters_to_km(total_distance),
             optimization_time=optimization_time,
         )
+
+    # Mark LLM interaction as done
+    st.session_state["llm_interaction_done"] = True
 
     st.markdown("---")
     st.markdown("### Relatório de Eficiência:")
@@ -226,6 +232,9 @@ question = st.text_input(
 if question:
     with st.spinner("Processando pergunta..."):
         answer = assistant.chat_about_routes(question, routes_context)
+
+    # Mark LLM interaction as done
+    st.session_state["llm_interaction_done"] = True
 
     # Adicionar ao histórico
     st.session_state["chat_history"].append({"question": question, "answer": answer})

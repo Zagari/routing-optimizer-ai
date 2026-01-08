@@ -12,6 +12,11 @@ from routing_optimizer.routing.distance import OSRMDistanceMatrix
 
 st.title("⚙️ Otimização de Rotas")
 
+# Check if optimization just completed (for sidebar refresh)
+if st.session_state.get("_optimization_just_completed"):
+    del st.session_state["_optimization_just_completed"]
+    st.balloons()
+
 # Verificar se dados foram carregados
 if "geocoded_data" not in st.session_state:
     st.warning("⚠️ Primeiro faça upload e geocodifique os dados na página **Endereços Destinos**.")
@@ -167,7 +172,6 @@ if st.button("🚀 Executar Otimização", type="primary"):
 
     # Calcular distância total
     total_distance = solver.get_total_distance(routes)
-    total_distance_km = total_distance / 1000
 
     # Salvar resultados no session_state
     st.session_state["routes"] = routes
@@ -176,6 +180,18 @@ if st.button("🚀 Executar Otimização", type="primary"):
     st.session_state["optimization_time"] = optimization_time
     st.session_state["fitness_history"] = solver.get_fitness_history()
     st.session_state["coords"] = coords
+
+    # Set flag and trigger rerun to update sidebar progress
+    st.session_state["_optimization_just_completed"] = True
+    st.rerun()
+
+# Show results if optimization has been run (persisted in session_state)
+if "routes" in st.session_state:
+    routes = st.session_state["routes"]
+    distance_matrix = st.session_state["distance_matrix"]
+    total_distance = st.session_state["total_distance"]
+    optimization_time = st.session_state["optimization_time"]
+    total_distance_km = total_distance / 1000
 
     # Exibir resumo
     st.markdown("---")
@@ -211,7 +227,6 @@ if st.button("🚀 Executar Otimização", type="primary"):
                     st.write(f"{j+1}. {successful_names[stop_idx]}")
 
     st.success("✅ Otimização concluída! Vá para a página **Resultados** para visualizar o mapa.")
-    st.balloons()
 
 # Exibir histórico de fitness se disponível
 if "fitness_history" in st.session_state:
@@ -234,4 +249,4 @@ if "fitness_history" in st.session_state:
         y="Fitness (menor=melhor)",
         title="Convergência do Algoritmo Genético",
     )
-    st.plotly_chart(fig)
+    st.plotly_chart(fig, width="stretch")

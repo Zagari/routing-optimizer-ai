@@ -13,6 +13,11 @@ from routing_optimizer.routing.distance import meters_to_km
 
 st.title("📊 Experimentos e Comparativos")
 
+# Check if experiments just completed (for sidebar refresh)
+if st.session_state.get("_experiments_just_completed"):
+    del st.session_state["_experiments_just_completed"]
+    st.balloons()
+
 st.markdown(
     """
 Compare o desempenho do **Algoritmo Genético** com algoritmos baseline:
@@ -162,7 +167,9 @@ if st.button("🔬 Executar Experimentos", type="primary"):
     # Salvar no session_state
     st.session_state["experiment_results"] = all_results
 
-    st.success("✅ Experimentos concluídos!")
+    # Set flag and trigger rerun to update sidebar progress
+    st.session_state["_experiments_just_completed"] = True
+    st.rerun()
 
 # Exibir resultados se disponíveis
 if "experiment_results" in st.session_state:
@@ -193,7 +200,7 @@ if "experiment_results" in st.session_state:
         )
         fig_dist.update_traces(texttemplate="%{text:.1f}", textposition="outside")
         fig_dist.update_layout(showlegend=False)
-        st.plotly_chart(fig_dist, use_container_width=True)
+        st.plotly_chart(fig_dist, width="stretch")
 
     with col2:
         # Gráfico de barras - Tempo
@@ -207,7 +214,7 @@ if "experiment_results" in st.session_state:
         )
         fig_time.update_traces(texttemplate="%{text:.2f}", textposition="outside")
         fig_time.update_layout(showlegend=False)
-        st.plotly_chart(fig_time, use_container_width=True)
+        st.plotly_chart(fig_time, width="stretch")
 
     st.markdown("---")
 
@@ -305,7 +312,7 @@ if "experiment_results" in st.session_state:
             legend_title="Configuração",
         )
 
-        st.plotly_chart(fig_evolution, use_container_width=True)
+        st.plotly_chart(fig_evolution, width="stretch")
     else:
         st.info("Nenhum histórico de evolução disponível.")
 
