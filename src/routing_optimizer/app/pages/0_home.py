@@ -31,7 +31,12 @@ O sistema utiliza:
 - **Algoritmo Genético** para otimização das rotas de entrega
 
 ---
-
-Navegue pelas páginas no menu lateral para começar.
 """
 )
+
+# Call-to-action button
+st.markdown("")
+if st.button("📁 Carregar Endereços", type="primary", width="stretch"):
+    # Reset to first tab before navigating
+    st.session_state["_upload_tab"] = "selection"
+    st.switch_page("pages/1_upload.py")

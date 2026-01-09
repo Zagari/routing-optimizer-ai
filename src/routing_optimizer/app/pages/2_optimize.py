@@ -117,32 +117,64 @@ st.markdown("---")
 
 # Botão de otimização
 if st.button("🚀 Executar Otimização", type="primary"):
-    # Etapa 1: Calcular matriz de distâncias
+    # Etapa 1: Calcular ou carregar matriz de distâncias
     st.subheader("Executando Otimização...")
 
-    with st.status("Calculando matriz de distâncias...", expanded=True) as status:
-        st.write("Consultando OSRM para distâncias reais de estrada...")
-        start_time = time.time()
+    # Check if distance matrix already exists (loaded from saved dataset)
+    if "distance_matrix" in st.session_state:
+        distance_matrix = st.session_state["distance_matrix"]
 
-        try:
-            dm = OSRMDistanceMatrix()
-            distance_matrix = dm.get_distance_matrix(coords)
-            matrix_time = time.time() - start_time
-
+        with st.status("Usando matriz de distâncias salva...", expanded=True) as status:
             n = distance_matrix.shape[0]
-            st.write(f"✅ Matriz {n}x{n} calculada em {matrix_time:.1f}s")
+            st.write(f"✅ Matriz {n}x{n} carregada do dataset salvo")
 
-            # Estatísticas da matriz
+            # Show stats
             max_dist_km = distance_matrix.max() / 1000
             has_positive = (distance_matrix > 0).any()
             min_dist_km = distance_matrix[distance_matrix > 0].min() / 1000 if has_positive else 0
             st.write(f"📊 Distâncias: mín={min_dist_km:.1f}km, máx={max_dist_km:.1f}km")
 
-            status.update(label="Matriz de distâncias calculada!", state="complete")
+            status.update(label="Matriz de distâncias carregada!", state="complete")
 
-        except Exception as e:
-            st.error(f"Erro ao calcular matriz de distâncias: {e}")
-            st.stop()
+    else:
+        # Calculate new distance matrix
+        with st.status("Calculando matriz de distâncias...", expanded=True) as status:
+            st.write("Consultando OSRM para distâncias reais de estrada...")
+            start_time = time.time()
+
+            try:
+                dm_calc = OSRMDistanceMatrix()
+                distance_matrix = dm_calc.get_distance_matrix(coords)
+                matrix_time = time.time() - start_time
+
+                n = distance_matrix.shape[0]
+                st.write(f"✅ Matriz {n}x{n} calculada em {matrix_time:.1f}s")
+
+                # Stats
+                max_dist_km = distance_matrix.max() / 1000
+                has_positive = (distance_matrix > 0).any()
+                min_dist_km = distance_matrix[distance_matrix > 0].min() / 1000 if has_positive else 0
+                st.write(f"📊 Distâncias: mín={min_dist_km:.1f}km, máx={max_dist_km:.1f}km")
+
+                # Save to dataset if available
+                if "_current_dataset_name" in st.session_state:
+                    from routing_optimizer.data.dataset_manager import DatasetManager
+
+                    dataset_manager = DatasetManager()
+                    try:
+                        dataset_manager.save_distance_matrix(
+                            st.session_state["_current_dataset_name"],
+                            distance_matrix,
+                        )
+                        st.write("💾 Matriz salva no dataset para uso futuro")
+                    except Exception as e:
+                        st.warning(f"Não foi possível salvar matriz: {e}")
+
+                status.update(label="Matriz de distâncias calculada!", state="complete")
+
+            except Exception as e:
+                st.error(f"Erro ao calcular matriz de distâncias: {e}")
+                st.stop()
 
     # Etapa 2: Executar Algoritmo Genético
     with st.status("Executando Algoritmo Genético...", expanded=True) as status:

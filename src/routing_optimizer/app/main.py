@@ -59,7 +59,7 @@ def render_progress_stepper():
 
     # Progress summary
     if completed_core == 3:
-        st.sidebar.success("✅ Fluxo principal completo!")
+        st.sidebar.success("✅ Otimização alcançada!")
     else:
         st.sidebar.caption(f"Etapas principais: {completed_core}/3")
 

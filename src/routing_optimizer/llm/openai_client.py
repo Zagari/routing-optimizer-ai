@@ -206,3 +206,75 @@ conhecimento sobre logistica e distribuicao farmaceutica."""
             True if API key is set, False otherwise.
         """
         return bool(self.api_key)
+
+    def suggest_address_corrections(
+        self,
+        failed_address: str,
+        city: str = "São Paulo",
+        state: str = "SP",
+    ) -> List[str]:
+        """Suggest corrections for a failed address using LLM.
+
+        Args:
+            failed_address: The address that failed geocoding.
+            city: City name for context.
+            state: State abbreviation for context.
+
+        Returns:
+            List of 2-3 suggested corrected addresses.
+        """
+        if not self.is_configured():
+            return []
+
+        system_prompt = """Você é um assistente especializado em endereços brasileiros.
+Sua tarefa é corrigir endereços que não foram encontrados pelo geocodificador.
+
+Regras:
+1. Analise o endereço e identifique possíveis erros de digitação ou abreviações
+2. Retorne APENAS o endereço corrigido no formato: "Nome do Logradouro, Número, Bairro, Cidade"
+3. NÃO inclua CEP, estado, país ou outras informações
+4. Se não tiver certeza, sugira as 2-3 opções mais prováveis
+5. Cada sugestão deve estar em uma linha separada
+6. Se o endereço parecer completamente inválido, retorne "IGNORAR"
+"""
+
+        user_prompt = f"""O seguinte endereço não foi encontrado pelo geocodificador:
+"{failed_address}"
+
+Contexto: Cidade de {city}, {state}, Brasil.
+
+Por favor, sugira 2 ou 3 correções possíveis para este endereço.
+Formato de cada sugestão: "Nome do Logradouro, Número, Bairro, Cidade"
+
+Se não for possível corrigir, responda apenas: IGNORAR"""
+
+        try:
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt},
+                ],
+                max_tokens=300,
+                temperature=0.3,  # Lower temperature for more consistent results
+            )
+
+            content = response.choices[0].message.content or ""
+
+            # Parse suggestions
+            if "IGNORAR" in content.upper():
+                return []
+
+            suggestions = []
+            for line in content.strip().split("\n"):
+                line = line.strip()
+                # Remove numbering like "1.", "2.", "-", etc.
+                if line and not line.startswith("#"):
+                    cleaned = line.lstrip("0123456789.-) ").strip()
+                    if cleaned and len(cleaned) > 5:
+                        suggestions.append(cleaned)
+
+            return suggestions[:3]  # Return max 3 suggestions
+
+        except Exception:
+            return []

@@ -102,3 +102,7 @@ thoughts/
 *.tfstate.*
 .terraform/
 .terraform.lock.hcl
+
+# Datasets salvos pelo usuário
+data/datasets/*
+!data/datasets/.gitkeep

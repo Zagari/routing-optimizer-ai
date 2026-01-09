@@ -103,7 +103,7 @@ class Geocoder:
                     longitude=0.0,
                     formatted_address="",
                     success=False,
-                    error="Endereco nao encontrado",
+                    error="Endereço não encontrado",
                 )
 
         except GeocoderTimedOut:
