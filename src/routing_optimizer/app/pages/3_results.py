@@ -2,12 +2,17 @@
 Page 3: Visualize optimized routes on map.
 """
 
+import os
+
 import pandas as pd
 import streamlit as st
 from streamlit_folium import st_folium
 
 from routing_optimizer.app.components.map_view import create_route_map
 from routing_optimizer.routing.distance import meters_to_km
+
+# Configuração padrão para rotas reais (do .env)
+DEFAULT_USE_REAL_ROADS = os.getenv("MAP_USE_REAL_ROADS", "false").lower() == "true"
 
 st.title("🗺️ Resultados e Rotas")
 
@@ -47,13 +52,27 @@ st.markdown("---")
 # Mapa com rotas
 st.subheader("🗺️ Mapa das Rotas")
 
+# Opção para mostrar rotas reais de estrada
+col_map_opt1, col_map_opt2 = st.columns([1, 3])
+with col_map_opt1:
+    use_real_roads = st.checkbox(
+        "🛣️ Mostrar rotas reais",
+        value=DEFAULT_USE_REAL_ROADS,
+        help="Busca o traçado real das estradas via OSRM. Pode demorar alguns segundos.",
+    )
+with col_map_opt2:
+    if use_real_roads:
+        st.info("⏳ Buscando rotas reais de estrada... Isso pode levar alguns segundos.")
+
 # Criar mapa
-m = create_route_map(
-    coordinates=coords,
-    routes=routes,
-    labels=successful_names,
-    depot_index=0,
-)
+with st.spinner("Gerando mapa..."):
+    m = create_route_map(
+        coordinates=coords,
+        routes=routes,
+        labels=successful_names,
+        depot_index=0,
+        use_real_roads=use_real_roads,
+    )
 
 # Exibir mapa
 st_folium(m, width=900, height=600)
