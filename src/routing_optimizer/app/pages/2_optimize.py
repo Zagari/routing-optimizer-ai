@@ -2,13 +2,21 @@
 Page 2: Configure and run route optimization.
 """
 
+import sys
 import time
+from pathlib import Path
 
 import streamlit as st
 
+# Add app directory to path for local imports
+_app_dir = Path(__file__).resolve().parent.parent
+if str(_app_dir) not in sys.path:
+    sys.path.insert(0, str(_app_dir))
+
+from utils.osrm_batched import get_distance_matrix_batched
+
 from routing_optimizer.genetic_algorithm.config import GAConfig
 from routing_optimizer.genetic_algorithm.vrp import VRPSolver
-from routing_optimizer.routing.distance import OSRMDistanceMatrix
 
 st.title("⚙️ Otimização de Rotas")
 
@@ -140,11 +148,30 @@ if st.button("🚀 Executar Otimização", type="primary"):
         # Calculate new distance matrix
         with st.status("Calculando matriz de distâncias...", expanded=True) as status:
             st.write("Consultando OSRM para distâncias reais de estrada...")
+            n_coords = len(coords)
+            if n_coords > 100:
+                num_batches = ((n_coords + 99) // 100) ** 2
+                st.write(f"📦 {n_coords} locais requerem {num_batches} lotes (limite OSRM: 100)")
+
             start_time = time.time()
 
             try:
-                dm_calc = OSRMDistanceMatrix()
-                distance_matrix = dm_calc.get_distance_matrix(coords)
+                # Progress bar with callback
+                progress_bar = st.progress(0, text="Iniciando cálculo...")
+
+                def update_progress(current, total):
+                    pct = current / total
+                    progress_bar.progress(pct, text=f"Processando lote {current}/{total}...")
+
+                # Calculate distance matrix with batching support
+                distance_matrix = get_distance_matrix_batched(
+                    coords,
+                    batch_size=100,
+                    progress_callback=update_progress,
+                )
+
+                progress_bar.empty()  # Remove progress bar when done
+
                 matrix_time = time.time() - start_time
 
                 n = distance_matrix.shape[0]
