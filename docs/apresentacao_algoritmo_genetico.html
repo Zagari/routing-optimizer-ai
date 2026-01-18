@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo Genético para VRP - FIAP Tech Challenge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E63946;
+            --primary-dark: #C1121F;
+            --secondary: #1D3557;
+            --accent: #457B9D;
+            --light: #F1FAEE;
+            --dark: #1D1D1D;
+            --gradient-1: linear-gradient(135deg, #E63946 0%, #F77F00 100%);
+            --gradient-2: linear-gradient(135deg, #1D3557 0%, #457B9D 100%);
+            --gradient-3: linear-gradient(135deg, #2A9D8F 0%, #264653 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--light);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* Slide Container */
+        .slides-container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 80px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(100%);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        .slide.prev {
+            transform: translateX(-100%);
+        }
+
+        /* Title Slide */
+        .slide-title {
+            background: var(--gradient-1);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .slide-title h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            opacity: 0.95;
+            margin-bottom: 40px;
+        }
+
+        .slide-title .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .slide-title .team {
+            margin-top: 60px;
+            font-size: 0.95rem;
+            opacity: 0.85;
+            line-height: 1.8;
+        }
+
+        /* Content Slides */
+        .slide-content {
+            background: var(--dark);
+        }
+
+        .slide-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--gradient-1);
+        }
+
+        .slide-header {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .slide-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-header .subtitle {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-top: 8px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            width: 100%;
+            max-width: 1400px;
+        }
+
+        .content-full {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* Cards */
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h3 .icon {
+            font-size: 1.5rem;
+        }
+
+        .card p, .card li {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        /* Code Block */
+        .code-block {
+            background: #0D1117;
+            border-radius: 12px;
+            padding: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .code-block .keyword { color: #FF7B72; }
+        .code-block .function { color: #D2A8FF; }
+        .code-block .string { color: #A5D6FF; }
+        .code-block .comment { color: #8B949E; }
+        .code-block .number { color: #79C0FF; }
+
+        /* Flow Diagram */
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 30px 0;
+        }
+
+        .flow-box {
+            background: var(--gradient-2);
+            padding: 15px 25px;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-align: center;
+            min-width: 140px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .flow-box.highlight {
+            background: var(--gradient-1);
+            transform: scale(1.05);
+        }
+
+        .flow-arrow {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        /* Formula */
+        .formula {
+            background: rgba(69, 123, 157, 0.2);
+            border-left: 4px solid var(--accent);
+            padding: 20px 25px;
+            border-radius: 0 12px 12px 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            margin: 15px 0;
+        }
+
+        /* Table */
+        .table-container {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 14px 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        th {
+            background: rgba(230, 57, 70, 0.2);
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        tr:hover {
+            background: rgba(255,255,255,0.03);
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: rgba(230, 57, 70, 0.15);
+            border-left: 4px solid var(--primary);
+            padding: 20px 25px;
+            border-radius: 0 12px 12px 0;
+            margin: 15px 0;
+        }
+
+        .highlight-box.info {
+            background: rgba(69, 123, 157, 0.15);
+            border-left-color: var(--accent);
+        }
+
+        /* Navigation */
+        .nav-container {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(0,0,0,0.7);
+            padding: 15px 30px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: var(--gradient-1);
+            border: none;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .slide-counter {
+            font-size: 1rem;
+            font-weight: 500;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        /* Progress Dots */
+        .progress-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+
+        /* Keyboard hint */
+        .keyboard-hint {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide.active .card,
+        .slide.active .flow-box,
+        .slide.active .formula,
+        .slide.active .code-block {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .slide.active .card:nth-child(2) { animation-delay: 0.1s; }
+        .slide.active .card:nth-child(3) { animation-delay: 0.2s; }
+        .slide.active .card:nth-child(4) { animation-delay: 0.3s; }
+
+        /* Three columns layout */
+        .content-three-cols {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            width: 100%;
+            max-width: 1400px;
+        }
+
+        /* Mutation types visualization */
+        .mutation-viz {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            margin: 10px 0;
+        }
+
+        .mutation-before, .mutation-after {
+            display: flex;
+            gap: 5px;
+        }
+
+        .mutation-item {
+            background: var(--secondary);
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        .mutation-item.highlight {
+            background: var(--primary);
+        }
+
+        .mutation-arrow {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="slides-container">
+        <!-- Slide 1: Title -->
+        <div class="slide slide-title active" data-slide="1">
+            <h1>Algoritmo Genetico para VRP</h1>
+            <h2>Otimizacao de Rotas com Inteligencia Artificial</h2>
+            <div class="badge">Tech Challenge - Fase 2 | FIAP</div>
+            <div class="team">
+                Grupo "Sala 14"<br>
+                Adriana Martins de Souza | Diego Oliveira da Silva<br>
+                Eduardo Nicola F. Zagari | Renan de Assis Torres
+            </div>
+        </div>
+
+        <!-- Slide 2: Overview -->
+        <div class="slide slide-content" data-slide="2">
+            <div class="slide-header">
+                <h2>Visao Geral do Algoritmo</h2>
+                <div class="subtitle">Fluxo principal inspirado na evolucao natural</div>
+            </div>
+            <div class="content-full">
+                <div class="flow-diagram">
+                    <div class="flow-box">Populacao Inicial</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-box">Avaliacao de Fitness</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-box highlight">Selecao (Torneio)</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-box highlight">Crossover (OX/PMX)</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-box highlight">Mutacao (4 tipos)</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-box">Elitismo</div>
+                </div>
+                <div class="content-grid" style="margin-top: 40px;">
+                    <div class="card">
+                        <h3><span class="icon">🧬</span> O que e um Algoritmo Genetico?</h3>
+                        <p>Uma <strong>metaheuristica</strong> inspirada na evolucao natural que encontra boas solucoes para problemas de otimizacao combinatoria em tempo razoavel.</p>
+                        <div class="highlight-box info" style="margin-top: 15px;">
+                            Nao garante a solucao otima, mas encontra solucoes muito boas rapidamente!
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3><span class="icon">📊</span> Parametros Padrao</h3>
+                        <ul>
+                            <li><strong>Populacao:</strong> 200 individuos</li>
+                            <li><strong>Mutacao:</strong> 60% de probabilidade</li>
+                            <li><strong>Geracoes:</strong> 1000 iteracoes</li>
+                            <li><strong>Torneio:</strong> 5 competidores</li>
+                            <li><strong>Elitismo:</strong> preserva top 10%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Problem Definition -->
+        <div class="slide slide-content" data-slide="3">
+            <div class="slide-header">
+                <h2>O Problema: TSP e VRP</h2>
+                <div class="subtitle">Desafios de otimizacao combinatoria</div>
+            </div>
+            <div class="content-grid">
+                <div class="card">
+                    <h3><span class="icon">🗺️</span> TSP - Caixeiro Viajante</h3>
+                    <p>Encontrar a rota mais curta que:</p>
+                    <ul>
+                        <li>Visite todas as cidades exatamente uma vez</li>
+                        <li>Retorne ao ponto de partida</li>
+                    </ul>
+                    <div class="highlight-box" style="margin-top: 15px;">
+                        <strong>Complexidade:</strong> Com 10 cidades = 3.628.800 rotas possiveis (10!)
+                        <br>Com 20 cidades = 2 quintilhoes de combinacoes!
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><span class="icon">🚚</span> VRP - Roteamento de Veiculos</h3>
+                    <p>Extensao do TSP com multiplas restricoes:</p>
+                    <ul>
+                        <li><strong>Multiplos veiculos:</strong> Entregas simultaneas</li>
+                        <li><strong>Capacidade:</strong> Max 200 kg por veiculo</li>
+                        <li><strong>Autonomia:</strong> Max 1500 px por viagem</li>
+                        <li><strong>Prioridades:</strong> Critico > Urgente > Normal</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Distance & Population -->
+        <div class="slide slide-content" data-slide="4">
+            <div class="slide-header">
+                <h2>Etapa 1: Distancias e Populacao</h2>
+                <div class="subtitle">Capitulo 3 - Inicializacao do algoritmo</div>
+            </div>
+            <div class="content-grid">
+                <div class="card">
+                    <h3><span class="icon">📏</span> Calculo de Distancia</h3>
+                    <p>Distancia euclidiana entre dois pontos:</p>
+                    <div class="formula">
+                        d = √[(x₂ - x₁)² + (y₂ - y₁)²]
+                    </div>
+                    <div class="code-block">
+<span class="keyword">def</span> <span class="function">calculate_distance</span>(city1, city2):
+    <span class="keyword">return</span> math.<span class="function">sqrt</span>(
+        (city1[<span class="number">0</span>] - city2[<span class="number">0</span>])**<span class="number">2</span> +
+        (city1[<span class="number">1</span>] - city2[<span class="number">1</span>])**<span class="number">2</span>
+    )
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><span class="icon">👥</span> Populacao Inicial</h3>
+                    <p>Gera solucoes aleatorias para diversidade:</p>
+                    <div class="code-block">
+<span class="keyword">def</span> <span class="function">generate_random_population</span>(cities, size):
+    population = []
+    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="function">range</span>(size):
+        individual = cities.<span class="function">copy</span>()
+        random.<span class="function">shuffle</span>(individual)
+        population.<span class="function">append</span>(individual)
+    <span class="keyword">return</span> population
+                    </div>
+                    <div class="highlight-box info" style="margin-top: 15px;">
+                        Cada "shuffle" e uma rota diferente!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: VRP Population -->
+        <div class="slide slide-content" data-slide="5">
+            <div class="slide-header">
+                <h2>Populacao para VRP</h2>
+                <div class="subtitle">Distribuicao round-robin entre veiculos</div>
+            </div>
+            <div class="content-grid">
+                <div class="card">
+                    <h3><span class="icon">🔄</span> Distribuicao Round-Robin</h3>
+                    <p>Para VRP, alem de embaralhar, distribuimos entre veiculos:</p>
+                    <div class="code-block">
+<span class="comment"># Distribui ciclicamente</span>
+<span class="keyword">for</span> i, delivery <span class="keyword">in</span> <span class="function">enumerate</span>(shuffled):
+    vehicle_idx = i % num_vehicles
+    routes[vehicle_idx].<span class="function">append</span>(delivery)
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><span class="icon">📋</span> Exemplo com 6 entregas e 2 veiculos</h3>
+                    <div class="table-container">
+                        <table>
+                            <tr><th>Indice</th><th>Entrega</th><th>Veiculo (i % 2)</th></tr>
+                            <tr><td>0</td><td>E3</td><td>0</td></tr>
+                            <tr><td>1</td><td>E1</td><td>1</td></tr>
+                            <tr><td>2</td><td>E6</td><td>0</td></tr>
+                            <tr><td>3</td><td>E4</td><td>1</td></tr>
+                            <tr><td>4</td><td>E2</td><td>0</td></tr>
+                            <tr><td>5</td><td>E5</td><td>1</td></tr>
+                        </table>
+                    </div>
+                    <p style="margin-top: 15px;"><strong>Resultado:</strong><br>
+                    Veiculo 0: [E3, E6, E2]<br>
+                    Veiculo 1: [E1, E4, E5]</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Fitness -->
+        <div class="slide slide-content" data-slide="6">
+            <div class="slide-header">
+                <h2>Etapa 2: Funcao de Fitness</h2>
+                <div class="subtitle">Capitulo 4 - Avaliacao da qualidade das solucoes</div>
+            </div>
+            <div class="content-full">
+                <div class="card" style="margin-bottom: 25px;">
+                    <h3><span class="icon">🎯</span> Fitness = Distancia + Penalidades</h3>
+                    <p>Menor valor = melhor solucao</p>
+                    <div class="formula">
+                        fitness = distancia_total + pen_capacidade + pen_prioridade + pen_veiculos
+                    </div>
+                </div>
+                <div class="content-grid">
+                    <div class="card">
+                        <h3><span class="icon">⚖️</span> Pesos das Penalidades</h3>
+                        <div class="table-container">
+                            <table>
+                                <tr><th>Componente</th><th>Peso</th></tr>
+                                <tr><td>Distancia Total</td><td>1x</td></tr>
+                                <tr><td>Excesso de Capacidade</td><td>1000x por kg</td></tr>
+                                <tr><td>Excesso de Autonomia</td><td>1000x por px</td></tr>
+                                <tr><td>Prioridade Errada (Critico)</td><td>50x por posicao</td></tr>
+                                <tr><td>Prioridade Errada (Urgente)</td><td>20x por posicao</td></tr>
+                                <tr><td>Veiculo Utilizado</td><td>100x por veiculo</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3><span class="icon">📦</span> Exemplo de Penalidade</h3>
+                        <div class="highlight-box">
+                            <strong>Capacidade maxima:</strong> 100 kg<br>
+                            <strong>Carga do veiculo:</strong> 120 kg<br><br>
+                            Excesso: 120 - 100 = <strong>20 kg</strong><br>
+                            Penalidade: 20 × 1000 = <strong>20.000 pontos</strong>
+                        </div>
+                        <p style="margin-top: 15px;">Isso forca o algoritmo a encontrar solucoes que respeitam as restricoes!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Selection -->
+        <div class="slide slide-content" data-slide="7">
+            <div class="slide-header">
+                <h2>Etapa 3: Selecao por Torneio</h2>
+                <div class="subtitle">Capitulo 4 - Escolha dos pais para reproducao</div>
+            </div>
+            <div class="content-grid">
+                <div class="card">
+                    <h3><span class="icon">🏆</span> Como funciona o Torneio</h3>
+                    <ol style="list-style: decimal; padding-left: 20px;">
+                        <li style="padding: 8px 0;">Seleciona aleatoriamente <strong>k</strong> individuos</li>
+                        <li style="padding: 8px 0;">Compara seus valores de fitness</li>
+                        <li style="padding: 8px 0;">Retorna o <strong>melhor</strong> (menor fitness)</li>
+                    </ol>
+                    <div class="code-block" style="margin-top: 20px;">
+<span class="keyword">def</span> <span class="function">tournament_selection</span>(pop, fitness, k=<span class="number">5</span>):
+    indices = random.<span class="function">sample</span>(<span class="function">range</span>(<span class="function">len</span>(pop)), k)
+    fits = [fitness[i] <span class="keyword">for</span> i <span class="keyword">in</span> indices]
+    winner = indices[fits.<span class="function">index</span>(<span class="function">min</span>(fits))]
+    <span class="keyword">return</span> pop[winner]
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><span class="icon">📊</span> Exemplo de Torneio (k=3)</h3>
+                    <div class="table-container">
+                        <table>
+                            <tr><th>Individuo</th><th>Fitness</th><th>Selecionado?</th></tr>
+                            <tr><td>rota_A</td><td>500</td><td></td></tr>
+                            <tr><td style="background: rgba(230,57,70,0.2);">rota_B</td><td style="background: rgba(230,57,70,0.2);">300</td><td style="background: rgba(230,57,70,0.2);">✓ Vencedor</td></tr>
+                            <tr><td>rota_C</td><td>800</td><td></td></tr>
+                        </table>
+                    </div>
+                    <div class="highlight-box info" style="margin-top: 20px;">
+                        <strong>Tamanho do torneio:</strong><br>
+                        • Maior (10): Converge rapido, risco de otimo local<br>
+                        • Menor (2): Mais diversidade, converge devagar<br>
+                        • Padrao (3-5): Bom equilibrio
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Crossover -->
+        <div class="slide slide-content" data-slide="8">
+            <div class="slide-header">
+                <h2>Etapa 4: Crossover (Recombinacao)</h2>
+                <div class="subtitle">Capitulo 5 - Combinando caracteristicas dos pais</div>
+            </div>
+            <div class="content-full">
+                <div class="card" style="margin-bottom: 25px;">
+                    <h3><span class="icon">⚠️</span> O Desafio Especial do TSP</h3>
+                    <div class="mutation-viz" style="justify-content: flex-start;">
+                        <span>Pai 1: [A, B, C, D, E]</span>
+                        <span style="margin-left: 20px;">Pai 2: [E, D, C, B, A]</span>
+                    </div>
+                    <div class="highlight-box" style="margin-top: 15px;">
+                        <strong>Crossover ingenuo:</strong> [A, B, C] + [B, A] = [A, B, C, B, A] ❌<br>
+                        Erro! B e A aparecem 2x, D e E faltam!
+                    </div>
+                    <p style="margin-top: 15px;">Cada cidade deve aparecer <strong>exatamente uma vez</strong>. Precisamos de operadores especializados!</p>
+                </div>
+                <div class="content-grid">
+                    <div class="card">
+                        <h3><span class="icon">🔀</span> Order Crossover (OX)</h3>
+                        <p>Preserva a <strong>ordem relativa</strong> dos genes:</p>
+                        <ol style="list-style: decimal; padding-left: 20px; margin-top: 10px;">
+                            <li style="padding: 5px 0;">Escolhe dois pontos de corte</li>
+                            <li style="padding: 5px 0;">Copia segmento do Pai 1</li>
+                            <li style="padding: 5px 0;">Preenche resto com Pai 2 (sem duplicar)</li>
+                        </ol>
+                    </div>
+                    <div class="card">
+                        <h3><span class="icon">🗺️</span> PMX Crossover</h3>
+                        <p>Preserva as <strong>posicoes absolutas</strong>:</p>
+                        <ul>
+                            <li>Usa mapeamento para resolver conflitos</li>
+                            <li>Mais complexo que OX</li>
+                            <li>Alternativo no projeto</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Crossover Example -->
+        <div class="slide slide-content" data-slide="9">
+            <div class="slide-header">
+                <h2>Order Crossover (OX) - Exemplo</h2>
+                <div class="subtitle">Passo a passo do funcionamento</div>
+            </div>
+            <div class="content-full">
+                <div class="card">
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <div>
+                            <strong>Pais:</strong>
+                            <div class="mutation-viz">
+                                <span>Pai 1: [A, B, <span style="color: var(--primary);">C, D, E</span>, F, G, H]</span>
+                                <span style="margin-left: 30px;">Pai 2: [C, G, A, H, B, D, F, E]</span>
+                            </div>
+                        </div>
+                        <div>
+                            <strong>Passo 1:</strong> Selecao aleatoria: start=2, end=5
+                            <div class="mutation-viz">
+                                <span>Filho: [_, _, <span style="color: var(--primary);">C, D, E</span>, _, _, _]</span>
+                            </div>
+                        </div>
+                        <div>
+                            <strong>Passo 2:</strong> Preencher com Pai 2 (ordem: H, B, D, F, E, C, G, A)
+                            <ul style="margin-top: 10px;">
+                                <li>H nao esta → adiciona</li>
+                                <li>B nao esta → adiciona</li>
+                                <li>D, E, C ja estao → pula</li>
+                                <li>G, A, F nao estao → adiciona</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong>Resultado Final:</strong>
+                            <div class="mutation-viz">
+                                <span style="font-size: 1.2rem; color: var(--primary);">Filho: [G, A, C, D, E, F, H, B]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Mutation -->
+        <div class="slide slide-content" data-slide="10">
+            <div class="slide-header">
+                <h2>Etapa 5: Mutacao</h2>
+                <div class="subtitle">Capitulo 5 - Introduzindo variacao aleatoria</div>
+            </div>
+            <div class="content-full">
+                <p style="margin-bottom: 25px;">O VRP usa <strong>4 tipos diferentes</strong> de mutacao, escolhidos aleatoriamente:</p>
+                <div class="content-grid">
+                    <div class="card">
+                        <h3><span class="icon">1️⃣</span> swap_within</h3>
+                        <p>Troca dentro da mesma rota</p>
+                        <div class="mutation-viz">
+                            <div class="mutation-before">
+                                <span class="mutation-item">E1</span>
+                                <span class="mutation-item highlight">E2</span>
+                                <span class="mutation-item">E3</span>
+                                <span class="mutation-item highlight">E4</span>
+                            </div>
+                            <span class="mutation-arrow">→</span>
+                            <div class="mutation-after">
+                                <span class="mutation-item">E1</span>
+                                <span class="mutation-item highlight">E4</span>
+                                <span class="mutation-item">E3</span>
+                                <span class="mutation-item highlight">E2</span>
+                            </div>
+                        </div>
+                        <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">Otimiza ordem local</p>
+                    </div>
+                    <div class="card">
+                        <h3><span class="icon">2️⃣</span> swap_between</h3>
+                        <p>Troca entre rotas diferentes</p>
+                        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; margin-top: 10px;">
+                            V1: [E1, <span style="color: var(--primary);">E2</span>, E3]<br>
+                            V2: [E4, <span style="color: var(--accent);">E5</span>]<br>
+                            ↓<br>
+                            V1: [E1, <span style="color: var(--accent);">E5</span>, E3]<br>
+                            V2: [E4, <span style="color: var(--primary);">E2</span>]
+                        </div>
+                        <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">Rebalanceia carga</p>
+                    </div>
+                    <div class="card">
+                        <h3><span class="icon">3️⃣</span> reverse</h3>
+                        <p>Inverte subsequencia (2-opt)</p>
+                        <div class="mutation-viz">
+                            <div class="mutation-before">
+                                <span class="mutation-item">E1</span>
+                                <span class="mutation-item highlight">E2</span>
+                                <span class="mutation-item highlight">E3</span>
+                                <span class="mutation-item highlight">E4</span>
+                                <span class="mutation-item">E5</span>
+                            </div>
+                            <span class="mutation-arrow">→</span>
+                            <div class="mutation-after">
+                                <span class="mutation-item">E1</span>
+                                <span class="mutation-item highlight">E4</span>
+                                <span class="mutation-item highlight">E3</span>
+                                <span class="mutation-item highlight">E2</span>
+                                <span class="mutation-item">E5</span>
+                            </div>
+                        </div>
+                        <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">Movimento 2-opt eficaz</p>
+                    </div>
+                    <div class="card">
+                        <h3><span class="icon">4️⃣</span> relocate</h3>
+                        <p>Move para outra rota</p>
+                        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; margin-top: 10px;">
+                            V1: [E1, <span style="color: var(--primary);">E2</span>, E3]<br>
+                            V2: [E4, E5]<br>
+                            ↓<br>
+                            V1: [E1, E3]<br>
+                            V2: [E4, E5, <span style="color: var(--primary);">E2</span>]
+                        </div>
+                        <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">Consolida rotas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Elitism -->
+        <div class="slide slide-content" data-slide="11">
+            <div class="slide-header">
+                <h2>Elitismo e Loop Principal</h2>
+                <div class="subtitle">Preservando as melhores solucoes</div>
+            </div>
+            <div class="content-grid">
+                <div class="card">
+                    <h3><span class="icon">👑</span> O que e Elitismo?</h3>
+                    <p>Preserva os <strong>melhores individuos</strong> de uma geracao para a proxima, garantindo que nunca perdemos uma boa solucao.</p>
+                    <div class="code-block" style="margin-top: 15px;">
+<span class="comment"># Preservar os 10% melhores</span>
+elite_size = POPULATION_SIZE // <span class="number">10</span>
+new_population = population[:elite_size]
+
+<span class="comment"># Preencher resto com filhos</span>
+<span class="keyword">while</span> <span class="function">len</span>(new_population) < POPULATION_SIZE:
+    parent1 = <span class="function">tournament_selection</span>(...)
+    parent2 = <span class="function">tournament_selection</span>(...)
+    child = <span class="function">crossover</span>(parent1, parent2)
+    child = <span class="function">mutate</span>(child)
+    new_population.<span class="function">append</span>(child)
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><span class="icon">📈</span> Importancia do Elitismo</h3>
+                    <div class="table-container">
+                        <table>
+                            <tr><th>Geracao</th><th>Sem Elitismo</th><th>Com Elitismo</th></tr>
+                            <tr><td>1</td><td>Fitness = 500</td><td>Fitness = 500 ✓</td></tr>
+                            <tr><td>2</td><td style="color: var(--primary);">Fitness = 600 ❌</td><td>Fitness = 480 ✓</td></tr>
+                        </table>
+                    </div>
+                    <div class="highlight-box" style="margin-top: 20px;">
+                        <strong>Sem elitismo:</strong> Boas solucoes podem ser perdidas entre geracoes, causando regressao na qualidade!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Convergence -->
+        <div class="slide slide-content" data-slide="12">
+            <div class="slide-header">
+                <h2>Convergencia do Algoritmo</h2>
+                <div class="subtitle">Evolucao da qualidade ao longo das geracoes</div>
+            </div>
+            <div class="content-grid">
+                <div class="card">
+                    <h3><span class="icon">📉</span> Grafico Tipico de Convergencia</h3>
+                    <div style="background: #0D1117; border-radius: 12px; padding: 30px; margin-top: 15px;">
+                        <svg viewBox="0 0 400 200" style="width: 100%; height: auto;">
+                            <!-- Grid -->
+                            <line x1="50" y1="20" x2="50" y2="170" stroke="#333" stroke-width="1"/>
+                            <line x1="50" y1="170" x2="380" y2="170" stroke="#333" stroke-width="1"/>
+                            <!-- Labels -->
+                            <text x="200" y="195" fill="#888" font-size="12" text-anchor="middle">Geracoes</text>
+                            <text x="20" y="100" fill="#888" font-size="12" text-anchor="middle" transform="rotate(-90, 20, 100)">Fitness</text>
+                            <!-- Curve -->
+                            <path d="M 50 30 Q 100 40, 150 80 T 250 140 T 380 160" fill="none" stroke="#E63946" stroke-width="3"/>
+                            <!-- Points -->
+                            <circle cx="50" cy="30" r="4" fill="#E63946"/>
+                            <circle cx="150" cy="80" r="4" fill="#E63946"/>
+                            <circle cx="250" cy="140" r="4" fill="#E63946"/>
+                            <circle cx="380" cy="160" r="4" fill="#E63946"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><span class="icon">🔄</span> Fases da Convergencia</h3>
+                    <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div style="width: 60px; height: 40px; background: var(--gradient-1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600;">1</div>
+                            <div>
+                                <strong>Inicio:</strong> Melhoria rapida<br>
+                                <span style="opacity: 0.7;">Muita "gordura" para cortar</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div style="width: 60px; height: 40px; background: var(--gradient-2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600;">2</div>
+                            <div>
+                                <strong>Meio:</strong> Melhoria mais lenta<br>
+                                <span style="opacity: 0.7;">Otimizacoes finas</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div style="width: 60px; height: 40px; background: var(--gradient-3); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600;">3</div>
+                            <div>
+                                <strong>Fim:</strong> Estabilizacao<br>
+                                <span style="opacity: 0.7;">Proximo do otimo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Summary -->
+        <div class="slide slide-content" data-slide="13">
+            <div class="slide-header">
+                <h2>Resumo: Fluxo Completo</h2>
+                <div class="subtitle">Da populacao inicial a solucao otimizada</div>
+            </div>
+            <div class="content-full">
+                <div class="flow-diagram" style="margin-bottom: 30px;">
+                    <div class="flow-box">1. Gera Populacao</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-box">2. Avalia Fitness</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-box">3. Seleciona Pais</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-box">4. Crossover</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-box">5. Mutacao</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-box">6. Elitismo</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-box highlight">Repete!</div>
+                </div>
+                <div class="content-three-cols">
+                    <div class="card">
+                        <h3><span class="icon">✅</span> Vantagens</h3>
+                        <ul>
+                            <li>Encontra boas solucoes rapidamente</li>
+                            <li>Escalavel para problemas grandes</li>
+                            <li>Flexivel para diferentes restricoes</li>
+                            <li>Paralelizavel</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3><span class="icon">⚙️</span> Parametros-chave</h3>
+                        <ul>
+                            <li>Populacao: 200</li>
+                            <li>Mutacao: 60%</li>
+                            <li>Geracoes: 1000</li>
+                            <li>Torneio: 5</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3><span class="icon">🎯</span> Resultado</h3>
+                        <p>Uma <strong>boa solucao</strong> (nao necessariamente otima) encontrada em <strong>tempo razoavel</strong>, adequada para aplicacoes praticas de logistica.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: Thank You -->
+        <div class="slide slide-title" data-slide="14">
+            <h1>Obrigado!</h1>
+            <h2>Perguntas?</h2>
+            <div class="badge" style="margin-top: 40px;">
+                github.com/Zagari/routing-optimizer-ai
+            </div>
+            <div class="team" style="margin-top: 40px;">
+                Tech Challenge - Fase 2 | FIAP<br>
+                Pos-Graduacao em Inteligencia Artificial para Devs<br><br>
+                Janeiro de 2026
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">←</button>
+        <div class="progress-dots" id="progressDots"></div>
+        <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">14</span></span>
+        <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">→</button>
+    </div>
+
+    <div class="keyboard-hint">Use ← → ou clique para navegar</div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 14;
+
+        // Initialize dots
+        const dotsContainer = document.getElementById('progressDots');
+        for (let i = 1; i <= totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot' + (i === 1 ? ' active' : '');
+            dot.onclick = () => goToSlide(i);
+            dotsContainer.appendChild(dot);
+        }
+
+        function updateSlide() {
+            // Update slides
+            document.querySelectorAll('.slide').forEach((slide, index) => {
+                slide.classList.remove('active', 'prev');
+                if (index + 1 === currentSlide) {
+                    slide.classList.add('active');
+                } else if (index + 1 < currentSlide) {
+                    slide.classList.add('prev');
+                }
+            });
+
+            // Update counter
+            document.getElementById('currentSlide').textContent = currentSlide;
+
+            // Update dots
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index + 1 === currentSlide);
+            });
+
+            // Update buttons
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+        }
+
+        function changeSlide(direction) {
+            const newSlide = currentSlide + direction;
+            if (newSlide >= 1 && newSlide <= totalSlides) {
+                currentSlide = newSlide;
+                updateSlide();
+            }
+        }
+
+        function goToSlide(slideNum) {
+            currentSlide = slideNum;
+            updateSlide();
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                changeSlide(1);
+            } else if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            }
+        });
+
+        // Touch/click navigation
+        let touchStartX = 0;
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                changeSlide(diff > 0 ? 1 : -1);
+            }
+        });
+
+        // Initialize
+        updateSlide();
+    </script>
+</body>
+</html>
