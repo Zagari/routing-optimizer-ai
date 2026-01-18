@@ -3,13 +3,21 @@ OpenAI client for generating driver instructions and efficiency reports.
 """
 
 import os
+from pathlib import Path
 from typing import List, Optional
 
 from dotenv import load_dotenv
 from openai import OpenAI
 
 # Load environment variables from .env file
-load_dotenv()
+# Try project root first, then current directory
+_current_file = Path(__file__).resolve()
+_project_root = _current_file.parent.parent.parent.parent  # src/routing_optimizer/llm -> project root
+_env_path = _project_root / ".env"
+
+if _env_path.exists():
+    load_dotenv(_env_path)
+load_dotenv()  # Also try current directory as fallback
 
 
 class RouteAssistant:

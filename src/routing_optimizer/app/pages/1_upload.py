@@ -2,6 +2,14 @@
 Page 1: Upload CSV, manage datasets, and geocode addresses.
 """
 
+from pathlib import Path
+
+from dotenv import load_dotenv
+
+# Load .env from project root before any other imports
+_project_root = Path(__file__).resolve().parent.parent.parent.parent.parent
+load_dotenv(_project_root / ".env")
+
 import pandas as pd
 import streamlit as st
 from streamlit_folium import st_folium
@@ -380,10 +388,10 @@ if current_tab == "selection":
 
     if st.button("Carregar Dados de Exemplo"):
         try:
-            example_path = "data/farmacias_sp.csv"
+            example_path = "data/0039-farmacias_SP.csv"
             df = pd.read_csv(example_path, encoding="latin-1")
             st.session_state["_temp_df"] = df
-            st.session_state["_temp_filename"] = "farmacias_sp.csv"
+            st.session_state["_temp_filename"] = "0039-farmacias_SP.csv"
             st.success("Dados de exemplo carregados!")
             go_to_tab("preview")
         except FileNotFoundError:
