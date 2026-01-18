@@ -39,10 +39,10 @@ class TestGeocodedLocation:
             longitude=0.0,
             formatted_address="",
             success=False,
-            error="Endereco nao encontrado",
+            error="Endereço não encontrado",
         )
         assert not loc.success
-        assert loc.error == "Endereco nao encontrado"
+        assert loc.error == "Endereço não encontrado"
 
 
 class TestGeocoder:
@@ -78,7 +78,7 @@ class TestGeocoder:
         result = geocoder.geocode_address("Endereco Inexistente XYZ 12345")
 
         assert not result.success
-        assert result.error == "Endereco nao encontrado"
+        assert result.error == "Endereço não encontrado"
 
     def test_geocode_batch(self):
         """Test batch geocoding."""

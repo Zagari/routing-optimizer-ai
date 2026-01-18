@@ -79,6 +79,23 @@ with col2:
         help="Número de execuções para o baseline Random (usa o melhor)",
     )
 
+# Opção de busca local (2-opt)
+st.markdown("---")
+is_large_dataset = n_locations > 100
+default_local_search = not is_large_dataset
+
+use_local_search = st.checkbox(
+    "🔍 Usar Busca Local (2-opt) no Algoritmo Genético",
+    value=default_local_search,
+    help="Melhora a qualidade das rotas, mas é lento para datasets grandes (>100 locais)",
+)
+
+if is_large_dataset and use_local_search:
+    st.warning(
+        f"⚠️ Dataset grande ({n_locations} locais). "
+        "A busca local pode demorar muito. Considere desmarcar esta opção."
+    )
+
 st.markdown("---")
 
 # Configurações do AG
@@ -101,10 +118,21 @@ for i in range(num_ga_configs):
         epochs = st.number_input(
             "Gerações",
             min_value=100,
-            max_value=2000,
+            max_value=10000,
             value=300 + i * 200,
             step=100,
             key=f"epochs_{i}",
+        )
+        # Calcular valor padrão como 20% de epochs
+        default_stag = max(10, int(epochs * 0.2))
+        stagnation = st.number_input(
+            "Estagnação",
+            min_value=10,
+            max_value=max(100, int(epochs) // 2),
+            value=default_stag,
+            step=10,
+            key=f"stag_{i}",
+            help=f"Gerações sem melhoria para parar (padrão: 20% = {default_stag})",
         )
         mutation = st.slider(
             "Mutação",
@@ -119,6 +147,9 @@ for i in range(num_ga_configs):
                 population_size=int(pop),
                 max_epochs=int(epochs),
                 mutation_probability=mutation,
+                stagnation_threshold=int(stagnation),
+                local_search_elites_only=use_local_search,
+                local_search_rate=0.0 if not use_local_search else 0.1,
             )
         )
 

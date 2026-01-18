@@ -1,0 +1,90 @@
+[
+  {
+    "original_address": "Av. Paulista, 1000, São Paulo, SP",
+    "latitude": -23.5648865,
+    "longitude": -46.651918,
+    "formatted_address": "Edifício Paulista Mil, 1000, Avenida Paulista, Morro dos Ingleses, Bela Vista, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 01310-100, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Rua Martins Fontes, 208, Centro, São Paulo",
+    "latitude": -23.181468,
+    "longitude": -45.871944,
+    "formatted_address": "Rua Martins Fontes, Jardim Jussara, Monte Castelo, São José dos Campos, Região Imediata de São José dos Campos, Região Metropolitana do Vale do Paraíba e Litoral Norte, Região Geográfica Intermediária de São José dos Campos, São Paulo, Região Sudeste, 12315-280, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Rua Jequitinhonha, 368, Catumbi, São Paulo",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Rua Leopoldo Miguez, 327, Glicério, São Paulo",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Avenida Dr. Altino Arantes, 1344, Vila Clementino, São Paulo",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Rua Santa Cruz, 81, Vila Mariana, São Paulo",
+    "latitude": -23.5966194,
+    "longitude": -46.6358133,
+    "formatted_address": "Centro de Referência e Treinamento DST/Aids-SP, 81, Rua Santa Cruz, Vila Mariana, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04121-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Avenida Dr. Eneas de Carvalho Aguiar, 255, Cerqueira César, São Paulo",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Rua Cônego Xavier, 276, Sacomã, São Paulo",
+    "latitude": -23.6090148,
+    "longitude": -46.5932628,
+    "formatted_address": "Hospital Heliópolis, 276, Rua Cônego Xavier, Nova Heliópolis, Vila Bandeirantes, Sacomã, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04231-030, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Rua Pedro de Toledo, 1800",
+    "latitude": -23.5973498,
+    "longitude": -46.6543824,
+    "formatted_address": "1800, Rua Pedro de Toledo, Indianópolis, Moema, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04028-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Avenida Dante Pazzanese, 500, Vila Mariana, São Paulo",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Avenida Dr. Arnaldo, 165, Cerqueira César, São Paulo",
+    "latitude": -23.5554402,
+    "longitude": -46.6680195,
+    "formatted_address": "165, Avenida Doutor Arnaldo, Cerqueira César, Jardim Paulista, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 01246-000, Brasil",
+    "success": true,
+    "error": null
+  }
+]

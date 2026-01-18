@@ -1,0 +1,1210 @@
+[
+  {
+    "original_address": "Av. Paulista, 1000, São Paulo, SP",
+    "latitude": -23.5648865,
+    "longitude": -46.651918,
+    "formatted_address": "Edifício Paulista Mil, 1000, Avenida Paulista, Morro dos Ingleses, Bela Vista, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 01310-100, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. CONSELHEIRO MOREIRA DE BARROS, 120, SANTANA, São Paulo, 02018010",
+    "latitude": -23.4971598,
+    "longitude": -46.6268336,
+    "formatted_address": "120, Rua Conselheiro Moreira de Barros, Santana, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 02018-010, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. LIMA E SILVA, 985, IPIRANGA, São Paulo, 04215020",
+    "latitude": -23.594382,
+    "longitude": -46.5969403,
+    "formatted_address": "985, Rua Lima e Silva, Vila Independência, Ipiranga, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04215-020, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. ARQUITETO VILA NOVA ARTIGAS, 980, CJ. HAB. TEOTONIO VILELA, São Paulo, 03928-240",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. GENERAL ROBERTO ALVES DE CARVALHO FILHO, 270, SANTO AMARO, São Paulo, 04744000",
+    "latitude": -23.6555597,
+    "longitude": -46.7058596,
+    "formatted_address": "Hospital Regional Sul, 270, Rua General Roberto Alves de Carvalho Filho, Jardim Santo Amaro, Santo Amaro, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04751-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. DONA ANA FLORA PINHEIRO DE SOUZA, 79, SAO MIGUEL PAULISTA, São Paulo, 08060150",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. LINS DE VASCONCELOS, 356, CAMBUCI, São Paulo, 01538000",
+    "latitude": -23.565959,
+    "longitude": -46.6221616,
+    "formatted_address": "Hospital e Maternidade Santa Maria da Cruz Azul, 356, Avenida Lins de Vasconcelos, Cambuci, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 01538-900, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. PROMOTOR GABRIEL NETTUZZI PEREZ, 159, SANTO AMARO, São Paulo, 04743020",
+    "latitude": -23.6528881,
+    "longitude": -46.7033478,
+    "formatted_address": "Rua Promotor Gabriel Nettuzzi Perez, Jardim Santo Amaro, Santo Amaro, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04743-030, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. CELSO GARCIA, 4815, TATUAPE, São Paulo, 03063-000",
+    "latitude": -23.5331239,
+    "longitude": -46.5663866,
+    "formatted_address": "Hospital Municipal Doutor Cármino Caricchio, 4815, Avenida Celso Garcia, Parque São Jorge, Tatuapé, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 03069-030, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. PIRES DO RIO, 199, SAO MIGUEL PAULISTA, São Paulo, 08020000",
+    "latitude": -23.4965634,
+    "longitude": -46.4420053,
+    "formatted_address": "Avenida Pires do Rio, Vila Rosária, São Miguel, São Miguel Paulista, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 08010-100, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "PRAÇA CAMILO CASTELO BRANCO, 10, VL PIAUÍ, São Paulo, 05109270",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. SERRA DO MAR, 56, GUAIANASES, São Paulo, 08410165",
+    "latitude": -23.5457589,
+    "longitude": -46.4169481,
+    "formatted_address": "Rua Serra do Mar, Guaianases, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 08410-080, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. JARAGUA, 858, BARRA FUNDA, São Paulo, 01129000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "TRAVESSA SOMOS TODOS IGUAIS, 330, SÃO MATEUS, São Paulo, 08343000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. OSVALDO VALLE CORDEIRO, 245, JD BRASILIA, São Paulo, 03584000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. RAGUEB CHOHFI, 822, JD TRES MARIAS, São Paulo, 08375-000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. DR ARNALDO, 165, CERQUEIRA CESAR, São Paulo, 01246900",
+    "latitude": -23.5554402,
+    "longitude": -46.6680195,
+    "formatted_address": "165, Avenida Doutor Arnaldo, Cerqueira César, Jardim Paulista, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 01246-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. FRANCISCO DE PAULA QUINTANILHA RIBEIRO, 860, JABAQUARA, São Paulo, 04330020",
+    "latitude": -23.6533422,
+    "longitude": -46.6456764,
+    "formatted_address": "Hospital Municipal Arthur Ribeiro de Saboya, 860, Avenida Francisco de Paula Quintanilha Ribeiro, Vila do Encontro, Jabaquara, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04330-020, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. JOSÉ MARIA ALVES DE DEUS, 288, JD ROBRU, São Paulo, 08150350",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. ENCRUZILHADA DO SUL, 220, JD PAULISTANO, São Paulo, 02816-000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. INTERLAGOS, 5945, INTERLAGOS, São Paulo, 04777-001",
+    "latitude": -23.6943122,
+    "longitude": -46.699181,
+    "formatted_address": "Avenida Interlagos, Interlagos, Socorro, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04777-140, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. CRISTO REI, 290, PIRITUBA, São Paulo, 02920-130",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. RIBEIRO DE ALMEIDA, 14, BARRA FUNDA, São Paulo, 01137020",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. ROMA, 446, LAPA, São Paulo, 05050090",
+    "latitude": -23.5227352,
+    "longitude": -46.7009539,
+    "formatted_address": "446, Rua Roma, Vila Romana, Lapa, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 05050-090, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. FERREIRA DE ALMEIDA, 73, CASA VERDE, São Paulo, 02517150",
+    "latitude": -23.5079151,
+    "longitude": -46.667173,
+    "formatted_address": "Rua Ferreira de Almeida, Casa Verde Alta, Casa Verde, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 02519-200, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. JOAQUIM GOUVEA FRANCO, 150, SÃO MATEUS, São Paulo, 03961020",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "ESTRADA DAS LAGRIMAS, 1403, SACOMÃ, São Paulo, 04232000",
+    "latitude": -23.6147484,
+    "longitude": -46.5938079,
+    "formatted_address": "Estrada das Lágrimas, Vila Bandeirantes, Vila Conde do Pinhal, Sacomã, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04248-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. ALMIRANTE DELAMARE, 3033, VL NOVA HELIÓPOLIS, São Paulo, 04230042",
+    "latitude": -23.6088941,
+    "longitude": -46.5906896,
+    "formatted_address": "Avenida Almirante Delamare, Vila Bandeirantes, Nova Heliópolis, Sacomã, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04236-270, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. DEPUTADO EMILIO CARLOS, 3000, VL NOVA CAHOEIRINHA, São Paulo, 02720200",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. JOÃO FIALHO DE CARVALHO, 35, VL DIVA, São Paulo, 03345010",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. ALVARO COELHO, 200, PQ PAULISTANO, São Paulo, 08070-130",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. SÃO ROQUE DO PARAGUAÇU, 190, VILA QUINTANA, São Paulo, 04837150",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. DR FRANCISCO MUNHOZ FILHO, 379, CIDADE LIDER, São Paulo, 08280000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. NAZARE, 301, IPIRANGA, São Paulo, 04263-000",
+    "latitude": -23.5874151,
+    "longitude": -46.6106191,
+    "formatted_address": "Avenida Nazaré, Ipiranga, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04263-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. DRA NEYDE APARECIDA SOLLITTO, 435, VILA CLEMENTINO, São Paulo, 04022040",
+    "latitude": -23.5928924,
+    "longitude": -46.6500899,
+    "formatted_address": "Rua Doutora Neyde Aparecida Sollitto, Vila Clementino, Vila Mariana, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04022-002, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. DOMINGUES VIDIGAL, 97, VL CURUÇÁ, São Paulo, 08160350",
+    "latitude": -23.504903,
+    "longitude": -46.4082281,
+    "formatted_address": "Rua Domingues Vidigal, Vila Rio do Ouro, Jardim Silva Teles, Vila Curuçá, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 08160-460, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. BOTUCATU, 743, VILA CLEMENTINO, São Paulo, 04023062",
+    "latitude": -23.5977631,
+    "longitude": -46.6426901,
+    "formatted_address": "Rua Botucatu, Vila Clementino, Vila Mariana, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04023-062, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. COLOMBO FLORENCE, 235, VL ARAPUA, São Paulo, 04257045",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. LOUIS BOULOGNE, 133, JD MACEDONIA, São Paulo, 05894350",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. LUSSANVIRA, 178, VL GUARANI, São Paulo, 04320000",
+    "latitude": -23.6407659,
+    "longitude": -46.6385235,
+    "formatted_address": "CE Riyuso Ogawa, 178, Rua Lussanvira, Vila Guarani, Jabaquara, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04316-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. ALMIRANTE DELAMARE, 1534, NOVA HELIOPOLIS, São Paulo, 04230-000",
+    "latitude": -23.6104395,
+    "longitude": -46.5901566,
+    "formatted_address": "Ambulatório Médico Especializado Barradas, 1534, Avenida Almirante Delamare, Nova Heliópolis, Ipiranga, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04230-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. ROLANDO CURTIS, 701, VL CLARA, São Paulo, 04414000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. DR ENEAS DE CARVALHO AGUIAR, 255, CERQUEIRA CESAR, São Paulo, 05403-900",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. DR ENEAS CARVALHO DE AGUIAR, 155, CERQUEIRA CESAR, São Paulo, 05403-000",
+    "latitude": -23.5560149,
+    "longitude": -46.6710487,
+    "formatted_address": "Avenida Doutor Eneas Carvalho de Aguiar, Cerqueira César, Jardim Paulista, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 05403-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. RIBEIRÃO VERMELHO, 501, VL PIRITUBA, São Paulo, 05170000",
+    "latitude": -23.4822599,
+    "longitude": -46.7473234,
+    "formatted_address": "Rua Ribeirão Vermelho, Vila Pirituba, Pirituba, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 05172-270, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. SERRA DE JAIRE, 1480, ÁGUA RASA, São Paulo, 03175001",
+    "latitude": -23.5538376,
+    "longitude": -46.5800393,
+    "formatted_address": "Unidade Basica de Saúde Agua Rasa, 1480, Rua Serra de Jairé, Água Rasa, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 03175-001, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. HORÁCIO LAFER, 590, ITAIM BIBI, São Paulo, 04538082",
+    "latitude": -23.5878801,
+    "longitude": -46.6836012,
+    "formatted_address": "Avenida Horácio Lafer, Vila Olímpia, Itaim Bibi, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04538-082, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. GONÇALVES LEDO, 606, IPIRANGA, São Paulo, 04216030",
+    "latitude": -23.5967306,
+    "longitude": -46.5984915,
+    "formatted_address": "Rua Gonçalves Ledo, Vila Independência, Ipiranga, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04209-003, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. CATARINA LOPES, 450, VILA REGINA, São Paulo, 08225000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. CENTRALINA, 168, GUAIANASES, São Paulo, 08410-000",
+    "latitude": -23.5439654,
+    "longitude": -46.4160236,
+    "formatted_address": "Rua Centralina, Guaianases, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 08410-080, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. CACHOEIRA ALTA, 1001, ITAIM PAULISTA, São Paulo, 08121-230",
+    "latitude": -23.50239,
+    "longitude": -46.39585,
+    "formatted_address": "Rua Cachoeira Alta, Vila Simone, Itaim Paulista, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 08110-220, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. NOSSA SENHORA DAS MERCÊS, 1315, VL DAS MERCÊS, São Paulo, 04165001",
+    "latitude": -23.6296003,
+    "longitude": -46.6049256,
+    "formatted_address": "Assistência Médica Ambulatorial Especialidade Vila das Mercês, 1315, Rua Nossa Senhora das Mercês, Vila das Mercês, Sacomã, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04165-001, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "ESTRADA M BOI MIRIM, 5203, JARDIM ANGELA, São Paulo, 04948970",
+    "latitude": -23.6887395,
+    "longitude": -46.7728829,
+    "formatted_address": "Estrada do M'Boi Mirim, Jardim Caiçara, Jardim Ângela, Jardim Copacabana, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04948-970, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. BATISTA MACIEL, 430, ELDORADO, São Paulo, 04459110",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. ARQUITETO VILA NOVA ARTIGAS, 980, CJ. HAB. TEOTONIO VILELA, São Paulo, 03928-240",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. PADRE FELICIANO DOMINGOS, 90, FREGUESIA DO Ó, São Paulo, 02965140",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. DR AUGUSTO DO AMARAL, 222, BRASILÂNDIA, São Paulo, 02831030",
+    "latitude": -23.4753244,
+    "longitude": -46.6923539,
+    "formatted_address": "222, Rua Doutor Augusto do Amaral, Vila Penteado, Brasilândia, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 02834-090, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. ALDEIA MARIA, 258, GUAIANASES, São Paulo, 08021070",
+    "latitude": -23.5607139,
+    "longitude": -46.4234057,
+    "formatted_address": "Rua Aldeia Maria, Jardim São Carlos (Guaianazes), Guaianases, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 08420-750, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. JOÃO LOPES DE LIMA, 1151, JD SAPOPEMBA, São Paulo, 03976020",
+    "latitude": -23.611467,
+    "longitude": -46.4933193,
+    "formatted_address": "Ama Sapopemba., 1151, Rua João Lopes de Lima, Jardim Sapopemba, Sapopemba, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 03975-110, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. DR DANTE PAZZANESE, 500, IBIRAPUERA, São Paulo, 04012180",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. JOÃO AMADO COUTINHO, 400, JARAGUÁ, São Paulo, 02815000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. EDUARDO REUTER, 678, COHAB BARRO BRANCO II, São Paulo, 08473533",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "ESTRADA DOM JOAO NERY, 3462, JD NAZARE, São Paulo, 08151000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. CECI, 2235, PLANALTO PAULISTA, São Paulo, 04065004",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. MENOTTI LAUDISIO, 100, PIRITUBA, São Paulo, 02945-000",
+    "latitude": -23.4845293,
+    "longitude": -46.7275153,
+    "formatted_address": "Hospital Municipal Doutor José Soares Hungria, 100, Avenida Menotti Laudisio, Jardim Líbano, Pirituba, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 02945-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. DR NESTOR SAMPAIO PENTEADO, 181, AMERICANÓPOLIS, São Paulo, 04409060",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "PRAÇA HAROLDO DALTRO, 461, VL NOVA MANCHESTER, São Paulo, 03444090",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. YERVANT KISSAJIKIAN, 416, VILA CONSTANCIA, São Paulo, 04657-000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. DR JACI BARBOSA, 280, VL CARRÃO, São Paulo, 03447000",
+    "latitude": -23.5528484,
+    "longitude": -46.5247879,
+    "formatted_address": "Rua Doutor Jaci Barbosa, Vila Fernandes, Vila Carrão, Carrão, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 03447-060, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. ITABERABA, 1377, FREGUESIA DO Ó, São Paulo, 02734000",
+    "latitude": -23.4899752,
+    "longitude": -46.6945072,
+    "formatted_address": "1377, Avenida Itaberaba, Parque Monteiro Soares, Freguesia do Ó, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 02735-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. CONSOLAÇÃO, 717, CONSOLAÇÃO, São Paulo, 01301000",
+    "latitude": -23.5478339,
+    "longitude": -46.6482042,
+    "formatted_address": "Instituto Clemente Pereira, 717, Rua da Consolação, Higienópolis, Consolação, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 01301-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. PLANALTO DE CONQUISTA, 80, JD INDEPENDÊNCIA, São Paulo, 03223170",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. ALMIRANTE DELAMARE, 1534, CIDADE NOVA HELIOPOLIS, São Paulo, 04230000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. CRISTALINA, 420, JD BOA VISTA, São Paulo, 05832-240",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. SANTO AFONSO, 419, JD MIRIAM, São Paulo, 04426000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. SUMIDOURO, 520, PINHEIROS, São Paulo, 05428-010",
+    "latitude": -23.5653825,
+    "longitude": -46.6978594,
+    "formatted_address": "Rua Sumidouro, Pinheiros, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 05428-010, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. AUGUSTO CARLOS BAUMANN, 623, ITAQUERA, São Paulo, 08210590",
+    "latitude": -23.5327466,
+    "longitude": -46.4481289,
+    "formatted_address": "Rua Augusto Carlos Bauman, Vila Carmosina, Itaquera, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 08210-540, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. CAXINGUI, 658, BUTANTÃ, São Paulo, 05579-001",
+    "latitude": -23.5772948,
+    "longitude": -46.7082287,
+    "formatted_address": "658, Avenida Professor Francisco Morato, Caxingui, Butantã, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 05512-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. JORGE MARACCINI PONFILIO, 210, JUSCELINO KUBITSCHEK, São Paulo, 08465050",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. SANTA CATARINA, 1523, VL SANTA CATARINA, São Paulo, 04378300",
+    "latitude": -23.6481285,
+    "longitude": -46.6620854,
+    "formatted_address": "AMA/UBS Integrada Doutor Waldomiro Pregnolato, 1523, Avenida Santa Catarina, Vila Santa Catarina, Jabaquara, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04368-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. BRIGADEIRO GAVIÃO PEIXOTO, 727, LAPA, São Paulo, 05078000",
+    "latitude": -23.5255223,
+    "longitude": -46.7152295,
+    "formatted_address": "Rua Brigadeiro Gavião Peixoto, Alto da Lapa, Vila Argentina, Lapa, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 05078-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. DO ORATÓRIO, 6557, VL INDUSTRIAL, São Paulo, 03221300",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. PEDRO DE CASTRO VELHO, 523, VL BANCÁRIA, São Paulo, 03921000",
+    "latitude": -23.5953934,
+    "longitude": -46.5159122,
+    "formatted_address": "Rua Pedro de Castro Velho, Vila Bancária, Sapopemba, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 03922-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. ALFONSO RENALDO GALLUCCI, 5, CASA VERDE, São Paulo, 02510-010",
+    "latitude": -23.5154171,
+    "longitude": -46.6528084,
+    "formatted_address": "Rua Alfonso Renaldo Gallucci, Casa Verde Baixa, Casa Verde, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 02510-010, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. COTOXÓ, 1000, POMPÉIA, São Paulo, 05033002",
+    "latitude": -23.5352671,
+    "longitude": -46.6871656,
+    "formatted_address": "1000, Rua Cotoxó, Pompéia, Perdizes, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 05021-001, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. FRANCISCO RODRIGUES, 435, JACANA, São Paulo, 02259000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. ROBERT KENNEDY, 3686, SOCORRO, São Paulo, 04772-001",
+    "latitude": -23.6937376,
+    "longitude": -46.7147358,
+    "formatted_address": "Avenida Atlântica, Socorro, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04772-001, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. PAULO CESAR, 60, TREMEMBÉ, São Paulo, 02311240",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. GASTÃO RAUL FOURTON BOUSQUET, 377, JD MARCELO, São Paulo, 05797000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. VERÍSSIMO DA SILVA, 136, JD NOSSA SRA.DO CARMO, São Paulo, 08275270",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. DR JUVENAL HUDSON FERREIRA, 13, JD MIRNA, São Paulo, 04856140",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. IPOPOCA, 61, ITAQUERA, São Paulo, 08290330",
+    "latitude": -23.5498305,
+    "longitude": -46.4487269,
+    "formatted_address": "UBS - Vila Carmosina, 61, Rua Ipopoca, Vila Carmosina, Itaquera, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 08290-220, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. SETE DE DEZEMBRO, 73, VL. NOVA CACHOCHEIRINHA, São Paulo, 02617-060",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. LINS DE VASCONCELOS, 356, CAMBUCI, São Paulo, 01538000",
+    "latitude": -23.565959,
+    "longitude": -46.6221616,
+    "formatted_address": "Hospital e Maternidade Santa Maria da Cruz Azul, 356, Avenida Lins de Vasconcelos, Cambuci, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 01538-900, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. VENANCIO AIRES, 52, PERDIZES, São Paulo, 05024030",
+    "latitude": -23.5301356,
+    "longitude": -46.6785838,
+    "formatted_address": "52, Rua Venâncio Aires, Pompéia, Perdizes, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 05024-030, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. DR ARNALDO, 251, CERQUEIRA CESAR, São Paulo, 01246900",
+    "latitude": -23.5561305,
+    "longitude": -46.6681716,
+    "formatted_address": "Instituto do Câncer do Estado de São Paulo Octavio Frias de Oliveira, 251, Avenida Doutor Arnaldo, Cerqueira César, Jardim Paulista, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 01246-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "TRAVESSA CASTANHA DO PARA, 49, INSTITUTO ADVENT CJ. HAB., São Paulo, 05868-730",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. MACABÚ, 35, JD SÃO CARLOS, São Paulo, 08411470",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. AQUINO FONSECA, 117, JD DAS CARMELITAS, São Paulo, 08275-610",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. SEBASTIAO ANDRADE BONANI, 340, JD PROMISSÃO, São Paulo, 04649-050",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. EURICO SODRE, 353, VL MEDEIROS, São Paulo, 02215010",
+    "latitude": -23.4923447,
+    "longitude": -46.5852617,
+    "formatted_address": "UBS + AMA Vila Medeiros, 353, Rua Eurico Sodre, Vila Ede, Vila Medeiros, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 02215-010, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. ITAPEVA, 700, CERQUEIRA CESAR, São Paulo, 01332000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. ANTÔNIO LINDORO DA SILVA, 295, VL MATILDE, São Paulo, 03506-000",
+    "latitude": -23.5337412,
+    "longitude": -46.5369366,
+    "formatted_address": "Rua Antônio Lindoro da Silva, Vila Aricanduva, Vila Matilde, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 03505-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. ERVA IMPERIAL, 501, JD GUAIRACA, São Paulo, 03244-030",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. CATÃO, 380, VILA ROMANA, São Paulo, 05042-000",
+    "latitude": -23.5243453,
+    "longitude": -46.7012841,
+    "formatted_address": "Hospital Central Sorocabana, 380, Rua Catão, Vila Romana, Lapa, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 05049-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. JOÃO LANGI, 150, BARRAGEM, São Paulo, 04877110",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. JOÃO FIALHO DE CARVALHO, 35, VL DIVA, São Paulo, 03345010",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. CONTOS GAUCHESCOS, 630, VILA CANAÃ, São Paulo, 04369-000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "PRAÇA CAMILO CASTELO BRANCO, 10, VL PIAUÍ, São Paulo, 05109270",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. TOMÉ DE SOUZA, 30, LAPA, São Paulo, 05079000",
+    "latitude": -23.5254039,
+    "longitude": -46.7068925,
+    "formatted_address": "30, Rua Tomé de Souza, Alto da Lapa, Vila Anastácio, Lapa, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 05079-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. LUAR DO SERTÃO, 980, CHÁCARA STA. MARIA, São Paulo, 05879450",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. FREI FIDELIS MOTA, 1001, PQ CRUZEIRO DO SUL, São Paulo, 08070130",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. FRANCISCO MATARAZZO, 74, PERDIZES, São Paulo, 05001000",
+    "latitude": -23.5255924,
+    "longitude": -46.6821209,
+    "formatted_address": "Avenida Francisco Matarazzo, Barra Funda, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 05005-900, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. GUARUVÁ, 429, CIDADE DUTRA, São Paulo, 04807030",
+    "latitude": -23.7105678,
+    "longitude": -46.7005781,
+    "formatted_address": "Rua Guaruva, Cidade Dutra, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04807-030, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. ADOLFO PINHEIRO, 581, SANTO AMARO, São Paulo, 04733100",
+    "latitude": -23.6480387,
+    "longitude": -46.7026952,
+    "formatted_address": "581, Avenida Adolfo Pinheiro, Santo Amaro, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04701-200, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. TEODORO BERNARDO DO NASCIMENTO, 330, JARDIM ROBRU, São Paulo, 08150-000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. FRANCISCO PEIXOTO BEZERRA, 400, JD BRASIL, São Paulo, 02222010",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. SÃO CAETANO, 812, LUZ, São Paulo, 01104-000",
+    "latitude": -23.5362087,
+    "longitude": -46.6253892,
+    "formatted_address": "Terminal Intermunicipal da Luz - BUSER Feira da Madrugada, 812, Rua São Caetano, Brás, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 01104-001, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. PAULO LINCOLN DO VALLE PONTIN, 241, JAÇANÃ, São Paulo, 02273-010",
+    "latitude": -23.4618791,
+    "longitude": -46.5857943,
+    "formatted_address": "Avenida Paulo Lincoln do Valle Pontin, Jardim Modelo, Jaçanã, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 02276-210, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. NOVA CANTAREIRA, 2641, TUCURUVI, São Paulo, 02340-000",
+    "latitude": -23.4751215,
+    "longitude": -46.613264,
+    "formatted_address": "2641, Avenida Nova Cantareira, Jardim França, Tucuruvi, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 02340-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. PROFª. VIRGILIA RODRIGUES A. C. PINTO, 555, LEONOR MENDES DE BARROS, São Paulo, 02346000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. DOM MANOEL D'ELBOUX, 76, JD SÃO JOSE, São Paulo, 02932110",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. FRANCISCO ANTUNES MEIRA, 255, PQ IPÊ, São Paulo, 05742060",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. HERCILIA, 452, VL MATILDE, São Paulo, 03512050",
+    "latitude": -23.5395362,
+    "longitude": -46.5275743,
+    "formatted_address": "Rua Hercilia, Vila Dalila, Vila Matilde, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 03515-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "ESTRADA DA BARONESA, 1000, PQ DO LAGO, São Paulo, 04944000",
+    "latitude": -23.7145282,
+    "longitude": -46.774493,
+    "formatted_address": "Estrada da Baronesa, Parque do Lago, Jardim Ângela, Jardim Aracati, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04945-130, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. CUMARU, 14, SÃO MIGUEL PAULISTA, São Paulo, 08010380",
+    "latitude": -23.4942011,
+    "longitude": -46.4328009,
+    "formatted_address": "Rua Cumaru, Vila Rosária, São Miguel, São Miguel Paulista, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 08010-090, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. ITAJUIBE, 299, JARDIM NÉLIA, São Paulo, 08120-470",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. CAITITU, 500, CID ANTONIO ESTEVÃO, São Paulo, 08223-000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. SILVEIRA PIRES, 265, PARQUE PAULISTANO, São Paulo, 08080160",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. CACHOEIRA DA ILHA, 71, ITAQUERA, São Paulo, 08270-110",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. KUMAKI AOKI, 785, JD HELENA, São Paulo, 08090370",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "TRAVESSA CASTANHA DO PARA, 49, INSTITUTO ADVENT, São Paulo, 05868-730",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. DR JOSÉ DE ARAÚJO VIEIRA, 61, SÃO RAFAEL, São Paulo, 08310240",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. ITABERABA, 1210, FREGUESIA DO Ó, São Paulo, 02734000",
+    "latitude": -23.4914616,
+    "longitude": -46.694928,
+    "formatted_address": "1210, Avenida Itaberaba, Parque Monteiro Soares, Freguesia do Ó, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 02735-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. ODEMIS, 468, JD UMUARAMA, São Paulo, 05783180",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. COREMU, 163, VL ESPERANÇA, São Paulo, 03647030",
+    "latitude": -23.5229896,
+    "longitude": -46.5265672,
+    "formatted_address": "Rua Coremu, Vila Esperança, Penha, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 03648-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "PRAÇA VIGARIO JOÃO GONÇALVES DE LIMA, 239, PERUS, São Paulo, 05206180",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. LUIS ASSON, 165, VL MONTEVIDEO, São Paulo, 03624010",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. DR JACI BARBOSA, 280, VL CARRÃO, São Paulo, 03447000",
+    "latitude": -23.5528484,
+    "longitude": -46.5247879,
+    "formatted_address": "Rua Doutor Jaci Barbosa, Vila Fernandes, Vila Carrão, Carrão, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 03447-060, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. SERRA DA QUEIMADA, 800, PQ GUAIANASES, São Paulo, 08431640",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. ESTANISLAU DE MIRANDA, 18, SAO MIGUEL PAULISTA, São Paulo, 08011710",
+    "latitude": -23.4978392,
+    "longitude": -46.4516564,
+    "formatted_address": "Rua Estanislau de Miranda, São Miguel, São Miguel Paulista, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 08060-150, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "ESTRADA MANOEL OLIVEIRA RAMOS, 1, CIDADE TIRADENTES, São Paulo, 08473000",
+    "latitude": -23.5921139,
+    "longitude": -46.3745928,
+    "formatted_address": "Estrada Manoel de Oliveira Ramos, Vila Rio Guaió, Vila São Sebastião, Ferraz de Vasconcelos, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 08513-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. PROFESSOR ASCENDINO REIS, 1130, VILA CLEMENTINO, São Paulo, 04027-000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. DR DIOGO DE FARIA, 839, VILA CLEMENTINO, São Paulo, 04037002",
+    "latitude": -23.5955624,
+    "longitude": -46.6455736,
+    "formatted_address": "Rua Doutor Diogo de Faria, Vila Clementino, Vila Mariana, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04025-001, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. RÔMULO NALDI, 57, JD ELISA MARIA, São Paulo, 02873250",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "R. XAVIER DE ALMEIDA, 210, IPIRANGA, São Paulo, 04211000",
+    "latitude": -23.5877204,
+    "longitude": -46.6086629,
+    "formatted_address": "AMA Doutor Flávio Giannotti, 210, Rua Xavier de Almeida, Ipiranga, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04211-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. OTÁVIO DE ROSA, 37, SÃO MIGUEL, São Paulo, 08011150",
+    "latitude": -23.4934832,
+    "longitude": -46.4470964,
+    "formatted_address": "Rua Otávio de Rosa, São Miguel, São Miguel Paulista, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 08070-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. DEOCLECIANO DE OLIVEIRA FILHO, 641, PQ STO ANTONIO, São Paulo, 05834-000",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "AV. SEN. TEOTONIO VILELA, 7900, , São Paulo, 04864-002",
+    "latitude": -23.7417143,
+    "longitude": -46.7060649,
+    "formatted_address": "Avenida Senador Teotônio Vilela, Vila São José, Cidade Dutra, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04837-110, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "R. JOSÉ SILVA ALCANTARA FILHO, 210, BURGO PAULISTA, São Paulo, 03680000",
+    "latitude": -23.5211046,
+    "longitude": -46.487897,
+    "formatted_address": "Rua José Alcântara Filho, Burgo Paulista, Ponte Rasa, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 03679-020, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "AV. CANGAIBA, 3722, CANGAÍBA, São Paulo, 03712001",
+    "latitude": -23.5085879,
+    "longitude": -46.5384971,
+    "formatted_address": "Avenida Cangaíba, Chacara Cruzeiro do Sul, Cangaíba, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 03711-012, Brasil",
+    "success": true,
+    "error": null
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "name": "0150_estabelecimentos",
+  "original_filename": "0150_estabelecimentos.csv",
+  "created_at": "2026-01-18T17:14:48.576112",
+  "address_column": "Endereco",
+  "name_column": null,
+  "depot_address": "Av. Paulista, 1000, São Paulo, SP",
+  "total_locations": 151,
+  "geocoded_count": 75,
+  "has_distance_matrix": true
+}

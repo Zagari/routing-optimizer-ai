@@ -1,0 +1,322 @@
+[
+  {
+    "original_address": "Av. Paulista, 1000, São Paulo, SP",
+    "latitude": -23.5648865,
+    "longitude": -46.651918,
+    "formatted_address": "Edifício Paulista Mil, 1000, Avenida Paulista, Morro dos Ingleses, Bela Vista, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 01310-100, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Rua Martins Fontes, 208 - Centro - São Paulo",
+    "latitude": -23.181468,
+    "longitude": -45.871944,
+    "formatted_address": "Rua Martins Fontes, Jardim Jussara, Monte Castelo, São José dos Campos, Região Imediata de São José dos Campos, Região Metropolitana do Vale do Paraíba e Litoral Norte, Região Geográfica Intermediária de São José dos Campos, São Paulo, Região Sudeste, 12315-280, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Rua Jequitinhonha, 368, Catumbi, São Paulo",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Rua Leopoldo Miguez, 327, Vila Glicério, São Paulo",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Avenida Doutor Altino Arantes, 1344, Vila Clementino, São Paulo",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Rua Santa Cruz, 81 - Vila Mariana, São Paulo",
+    "latitude": -23.5966194,
+    "longitude": -46.6358133,
+    "formatted_address": "Centro de Referência e Treinamento DST/Aids-SP, 81, Rua Santa Cruz, Vila Mariana, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04121-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Avenida Dr. Eneas de Carvalho Aguiar, 255, São Paulo, SP",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Rua Cônego Xavier, 276, Sacomã, São Paulo",
+    "latitude": -23.6090148,
+    "longitude": -46.5932628,
+    "formatted_address": "Hospital Heliópolis, 276, Rua Cônego Xavier, Nova Heliópolis, Vila Bandeirantes, Sacomã, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04231-030, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Rua Pedro de Toledo, 1800",
+    "latitude": -23.5973498,
+    "longitude": -46.6543824,
+    "formatted_address": "1800, Rua Pedro de Toledo, Indianópolis, Moema, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 04028-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Avenida Dante Pazzanese, 500, Vila Mariana, São Paulo",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Av. Dr. Arnaldo, 165 - Cerqueira César - São Paulo",
+    "latitude": -23.5554402,
+    "longitude": -46.6680195,
+    "formatted_address": "165, Avenida Doutor Arnaldo, Cerqueira César, Jardim Paulista, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 01246-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Avenida dos Coqueiros, s/n, Centro, Franco da Rocha",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Avenida Emílio Ribas, 1126, Gapava, Guarulhos",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Avenida Vereador Narciso Yague Guimarães, 776 - Centro Cívico - Mogi das Cruzes",
+    "latitude": -23.5193714,
+    "longitude": -46.1832157,
+    "formatted_address": "Avenida Vereador Narciso Yague Guimarães, Jardim Esplanada, Centro Cívico, Mogi das Cruzes, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 08780-080, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Rua Antônio Bernardo Coutinho, 150, Centro, Osasco",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Rua Dr. Henrique Calderazzo, 321 - Paraíso - Santo André",
+    "latitude": -23.670927,
+    "longitude": -46.5329851,
+    "formatted_address": "Hospital Estadual Mário Covas, 321, Rua Doutor Henrique Calderazzo, Paraíso, Santo André, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 09190-615, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Rua Afonso Pena, 1537 - Vila Mendonça - Araçatuba",
+    "latitude": -21.2082877,
+    "longitude": -50.4273804,
+    "formatted_address": "Rua Afonso Pena, Vila Mendonça, Araçatuba, Região Imediata de Araçatuba, Região Geográfica Intermediária de Araçatuba, São Paulo, Região Sudeste, 16011-058, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Avenida Espanha, 188, Centro, São Paulo",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Rua Alexandre Matins, 70 - Aparecida - Santos",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Avenida 21 de Abril, 1238, Centro, São Paulo",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Avenida Engenheiro Luiz Edmundo Carrijo Coube, 100, Geisel, São Paulo",
+    "latitude": -22.3452194,
+    "longitude": -49.0317062,
+    "formatted_address": "Avenida Engenheiro Luiz Edmundo Carrijo Coube, Jardim Colonial, Jardim Santos Dumont, Bauru, Região Imediata de Bauru, Região Geográfica Intermediária de Bauru, São Paulo, Região Sudeste, 17033-360, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Av. Professor Montenegro, s/n, Vila Paraíso, São Paulo",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Rua General Setembrino de Carvalho, 123 - Ponte Preta - Campinas",
+    "latitude": -22.9204796,
+    "longitude": -47.0556787,
+    "formatted_address": "Rua General Setembrino de Carvalho, Ponte Preta, Campinas, Região Imediata de Campinas, Região Metropolitana de Campinas, Região Geográfica Intermediária de Campinas, São Paulo, Região Sudeste, 13041-670, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Rua Zeferino Vaz, 0, Cidade Universitária, Campinas",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Av. Wilson Sábio de Melo, 1833 - Polo Industrial São Bernardo - Franca",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Rua Barão do Rio Branco, s/n - Centro - Assis",
+    "latitude": -22.6599077,
+    "longitude": -50.4130205,
+    "formatted_address": "Rua Barão do Rio Branco, Vila Rosangela, Centro, Assis, Região Imediata de Assis, Região Geográfica Intermediária de Marília, São Paulo, Região Sudeste, 19814-010, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Rua XV de novembro, 1.151 - Centro - Marília",
+    "latitude": -22.7872156,
+    "longitude": -50.2207023,
+    "formatted_address": "Rua XV de Novembro, Centro, Palmital, Região Imediata de Assis, Região Geográfica Intermediária de Marília, São Paulo, Região Sudeste, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Rua do Trabalho, 602 - Vila Independência - Piracicaba",
+    "latitude": -22.7191865,
+    "longitude": -47.6318881,
+    "formatted_address": "Rua do Trabalho, Vila Independência, Piracicaba, Região Imediata de Piracicaba, Região Metropolitana de Piracicaba, Região Geográfica Intermediária de Campinas, São Paulo, Região Sudeste, 13416-240, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Rua José Bongiovani, 1297 - Cidade Universitária - Presidente Prudente",
+    "latitude": -22.1350424,
+    "longitude": -51.3993159,
+    "formatted_address": "Rua José Bongiovani, Cidade Universitária, Presidente Prudente, Região Imediata de Presidente Prudente, Região Geográfica Intermediária de Presidente Prudente, São Paulo, Região Sudeste, 19050-680, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Rua dos Expedicionários, 140, Pariquera-Açú, São Paulo",
+    "latitude": -24.7159759,
+    "longitude": -47.8769403,
+    "formatted_address": "Rua dos Expedicionários, Pariquera-Açu, Região Imediata de Registro, Região Geográfica Intermediária de Sorocaba, São Paulo, Região Sudeste, 11930-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Rua Marechal Deodoro, 1112 - Centro - Ribeirão Preto",
+    "latitude": -21.1861109,
+    "longitude": -47.8081084,
+    "formatted_address": "1112, Rua Marechal Deodoro, Vila Seixas, Ribeirão Preto, Região Imediata de Ribeirão Preto, Região Metropolitana de Ribeirão Preto, Região Geográfica Intermediária de Ribeirão Preto, São Paulo, Região Sudeste, 14015-120, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Praça Dr. João Ribeiro, 221, Centro, São Paulo",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Rua Bernardino de Campos, 4441 - Redentora - São José do Rio Preto",
+    "latitude": -20.8206303,
+    "longitude": -49.3904939,
+    "formatted_address": "Farmácia Ambulatorial, 4441, Rua Bernardino de Campos, Jardim do Norte, São José do Rio Preto, Região Imediata de São José do Rio Preto, Região Metropolitana de São José do Rio Preto, Região Geográfica Intermediária de São José do Rio Preto, São Paulo, Região Sudeste, 15015-205, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Av. Lino José de Seixas, 1455 - Jardim Fuscaldo - São José do Rio Preto",
+    "latitude": -20.8069071,
+    "longitude": -49.3596895,
+    "formatted_address": "Hospital Estadual João Paulo II, 1455, Avenida Lino José de Seixas, Jardim Fuscaldo, São José do Rio Preto, Região Imediata de São José do Rio Preto, Região Metropolitana de São José do Rio Preto, Região Geográfica Intermediária de São José do Rio Preto, São Paulo, Região Sudeste, 15061-060, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Rua Antonio Murasse, 2650 - 15502-326 - Parque Saúde - Votuporanga",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Avenida Comendador Pereira Inácio, 154, Vergueiro, Sorocaba",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Rua Alcaide Mor Camargo, 100 - Jardim Russi - Taubaté",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  },
+  {
+    "original_address": "Rua Sebastião Humel, 422, Centro - São José dos Campos",
+    "latitude": -23.1806041,
+    "longitude": -45.8829225,
+    "formatted_address": "Rua Sebastião Humel, Jardim Bela Vista, São José dos Campos, Região Imediata de São José dos Campos, Região Metropolitana do Vale do Paraíba e Litoral Norte, Região Geográfica Intermediária de São José dos Campos, São Paulo, Região Sudeste, 12210-200, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Rua Nicolau Filizola, 100, Centro, São Bernardo do Campo",
+    "latitude": -23.6979132,
+    "longitude": -46.5546074,
+    "formatted_address": "Poupatempo São Bernardo, 100, Rua Nicolau Filizola, Jardim das Américas, Vila Euclides, Centro, São Bernardo do Campo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 09725-760, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Rua Paraíba S/Nº - Ponto de referência Escola EMEI José Ferrari, 646 - 09521-070",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "formatted_address": "",
+    "success": false,
+    "error": "Endereço não encontrado"
+  }
+]

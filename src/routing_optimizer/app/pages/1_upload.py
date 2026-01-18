@@ -10,16 +10,32 @@ from dotenv import load_dotenv
 _project_root = Path(__file__).resolve().parent.parent.parent.parent.parent
 load_dotenv(_project_root / ".env")
 
-import pandas as pd
 import streamlit as st
+
+# Show loading indicator immediately while heavy imports load
+_loading_placeholder = st.empty()
+_loading_placeholder.info("⏳ Carregando módulos...")
+
+import pandas as pd
 from streamlit_folium import st_folium
 
 from routing_optimizer.app.components.map_view import create_locations_map
 from routing_optimizer.data.dataset_manager import DatasetManager
 from routing_optimizer.routing.geocoding import Geocoder
 
-# Initialize dataset manager (global for this page)
-dataset_manager = DatasetManager()
+
+# Cache the dataset manager to avoid re-initialization on every rerun
+@st.cache_resource
+def get_dataset_manager():
+    """Get or create cached DatasetManager instance."""
+    return DatasetManager()
+
+
+# Initialize dataset manager (cached)
+dataset_manager = get_dataset_manager()
+
+# Clear loading indicator
+_loading_placeholder.empty()
 
 
 # =============================================================================

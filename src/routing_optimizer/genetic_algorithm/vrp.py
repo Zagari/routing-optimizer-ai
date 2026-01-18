@@ -5,15 +5,18 @@ This module provides a high-level interface for solving the Vehicle Routing Prob
 using a genetic algorithm approach.
 """
 
-from typing import List, Optional, Tuple
+import random
+from typing import Callable, List, Optional, Tuple
 
 import numpy as np
 
 from .config import GAConfig
 from .core import (
+    apply_local_search,
     calculate_distance,
     calculate_fitness_vrp,
     calculate_routes_total_distance,
+    generate_hybrid_population,
     generate_random_population,
     mutate_vrp,
     sort_population,
@@ -46,6 +49,8 @@ class VRPSolver:
         self.best_solution: Optional[List[List[int]]] = None
         self.best_fitness: Optional[float] = None
         self._distance_matrix: Optional[np.ndarray] = None
+        self.converged: bool = False
+        self.final_epoch: int = 0
 
     def solve(
         self,
@@ -86,6 +91,10 @@ class VRPSolver:
         num_vehicles: int,
         capacity: float,
         demands: Optional[List[float]] = None,
+        progress_callback: Optional[
+            Callable[[int, int, float, List[List[int]]], None]
+        ] = None,
+        callback_interval: int = 10,
     ) -> List[List[int]]:
         """Solve VRP with pre-computed distance matrix.
 
@@ -94,6 +103,9 @@ class VRPSolver:
             num_vehicles: Number of vehicles available.
             capacity: Maximum capacity per vehicle.
             demands: Demand at each location. If None, assumes 1.0 for each.
+            progress_callback: Function called every N generations with
+                (current_generation, total_generations, best_fitness, best_routes).
+            callback_interval: Interval of generations between callbacks (default: 10).
 
         Returns:
             List of routes. Each route is a list of location indices (1-based, 0 is depot).
@@ -110,16 +122,35 @@ class VRPSolver:
         self.fitness_history = []
         self.best_solution = None
         self.best_fitness = float("inf")
+        self.converged = False
+        self.final_epoch = 0
+
+        # Stagnation tracking for early convergence
+        stagnation_counter = 0
+        previous_best = float("inf")
 
         # Generate initial population
-        population = generate_random_population(
-            num_locations=num_locations,
-            num_vehicles=num_vehicles,
-            population_size=self.config.population_size,
-        )
+        if self.config.hybrid_initialization:
+            population = generate_hybrid_population(
+                num_locations=num_locations,
+                num_vehicles=num_vehicles,
+                population_size=self.config.population_size,
+                distance_matrix=distance_matrix,
+                heuristic_ratio=self.config.heuristic_ratio,
+            )
+        else:
+            population = generate_random_population(
+                num_locations=num_locations,
+                num_vehicles=num_vehicles,
+                population_size=self.config.population_size,
+            )
+
+        # Initial callback to show we're starting
+        if progress_callback:
+            progress_callback(0, self.config.max_epochs, float("inf"), None)
 
         # Evolution loop
-        for _ in range(self.config.max_epochs):
+        for epoch in range(self.config.max_epochs):
             # Evaluate fitness
             fitness_values = [
                 calculate_fitness_vrp(
@@ -140,9 +171,37 @@ class VRPSolver:
                 self.best_solution = [route.copy() for route in population[0]]
 
             self.fitness_history.append(fitness_values[0])
+            self.final_epoch = epoch
+
+            # Check for stagnation (early convergence)
+            current_best = fitness_values[0]
+            if abs(current_best - previous_best) < 1e-6:
+                stagnation_counter += 1
+                if stagnation_counter >= self.config.stagnation_threshold:
+                    self.converged = True
+                    break
+            else:
+                stagnation_counter = 0
+                previous_best = current_best
+
+            # Call progress callback
+            if progress_callback and epoch % callback_interval == 0:
+                progress_callback(
+                    epoch, self.config.max_epochs, self.best_fitness, self.best_solution
+                )
 
             # Create new population with elitism
-            new_population = population[: self.config.elitism_count]
+            # Apply 2-opt only to elite individuals (much faster than all children)
+            if self.config.local_search_elites_only:
+                new_population = [
+                    apply_local_search(individual, distance_matrix)
+                    for individual in population[: self.config.elitism_count]
+                ]
+            else:
+                new_population = [
+                    [route.copy() for route in individual]
+                    for individual in population[: self.config.elitism_count]
+                ]
 
             # Generate offspring
             while len(new_population) < self.config.population_size:
@@ -154,11 +213,29 @@ class VRPSolver:
                 )
 
                 child = vrp_crossover(parent1, parent2)
-                child = mutate_vrp(child, self.config.mutation_probability)
+                child = mutate_vrp(
+                    child,
+                    self.config.mutation_probability,
+                    self.config.max_mutations_per_individual,
+                )
+
+                # Apply 2-opt with probability local_search_rate (if not using elites_only)
+                if not self.config.local_search_elites_only:
+                    if random.random() < self.config.local_search_rate:
+                        child = apply_local_search(child, distance_matrix)
 
                 new_population.append(child)
 
             population = new_population
+
+        # Final callback at completion
+        if progress_callback:
+            progress_callback(
+                self.final_epoch + 1,
+                self.config.max_epochs,
+                self.best_fitness,
+                self.best_solution,
+            )
 
         return self.best_solution or []
 

@@ -1,0 +1,11 @@
+{
+  "name": "0039farmacias_sp",
+  "original_filename": "0039-farmacias_SP.csv",
+  "created_at": "2026-01-18T11:53:47.019870",
+  "address_column": "Endereco",
+  "name_column": null,
+  "depot_address": "Av. Paulista, 1000, São Paulo, SP",
+  "total_locations": 40,
+  "geocoded_count": 21,
+  "has_distance_matrix": true
+}

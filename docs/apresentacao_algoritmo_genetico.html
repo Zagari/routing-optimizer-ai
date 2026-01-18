@@ -440,8 +440,8 @@
     <div class="slides-container">
         <!-- Slide 1: Title -->
         <div class="slide slide-title active" data-slide="1">
-            <h1>Algoritmo Genetico para VRP</h1>
-            <h2>Otimizacao de Rotas com Inteligencia Artificial</h2>
+            <h1>Algoritmo Genético para VRP</h1>
+            <h2>Otimização de Rotas com Inteligência Artificial</h2>
             <div class="badge">Tech Challenge - Fase 2 | FIAP</div>
             <div class="team">
                 Grupo "Sala 14"<br>
@@ -453,39 +453,39 @@
         <!-- Slide 2: Overview -->
         <div class="slide slide-content" data-slide="2">
             <div class="slide-header">
-                <h2>Visao Geral do Algoritmo</h2>
-                <div class="subtitle">Fluxo principal inspirado na evolucao natural</div>
+                <h2>Visão Geral do Algoritmo</h2>
+                <div class="subtitle">Fluxo principal inspirado na evolução natural</div>
             </div>
             <div class="content-full">
                 <div class="flow-diagram">
-                    <div class="flow-box">Populacao Inicial</div>
+                    <div class="flow-box">População Híbrida</div>
                     <span class="flow-arrow">→</span>
-                    <div class="flow-box">Avaliacao de Fitness</div>
+                    <div class="flow-box">Avaliação de Fitness</div>
                     <span class="flow-arrow">→</span>
-                    <div class="flow-box highlight">Selecao (Torneio)</div>
+                    <div class="flow-box highlight">Seleção (Torneio)</div>
                     <span class="flow-arrow">→</span>
-                    <div class="flow-box highlight">Crossover (OX/PMX)</div>
+                    <div class="flow-box highlight">Crossover (Route-Based)</div>
                     <span class="flow-arrow">→</span>
-                    <div class="flow-box highlight">Mutacao (4 tipos)</div>
+                    <div class="flow-box highlight">Mutação (1-3x)</div>
                     <span class="flow-arrow">→</span>
-                    <div class="flow-box">Elitismo</div>
+                    <div class="flow-box">2-opt + Elitismo</div>
                 </div>
                 <div class="content-grid" style="margin-top: 40px;">
                     <div class="card">
-                        <h3><span class="icon">🧬</span> O que e um Algoritmo Genetico?</h3>
-                        <p>Uma <strong>metaheuristica</strong> inspirada na evolucao natural que encontra boas solucoes para problemas de otimizacao combinatoria em tempo razoavel.</p>
+                        <h3><span class="icon">🧬</span> O que é um Algoritmo Genético?</h3>
+                        <p>Uma <strong>metaheurística</strong> inspirada na evolução natural que encontra boas soluções para problemas de otimização combinatória em tempo razoável.</p>
                         <div class="highlight-box info" style="margin-top: 15px;">
-                            Nao garante a solucao otima, mas encontra solucoes muito boas rapidamente!
+                            Não garante a solução ótima, mas encontra soluções muito boas rapidamente!
                         </div>
                     </div>
                     <div class="card">
-                        <h3><span class="icon">📊</span> Parametros Padrao</h3>
+                        <h3><span class="icon">📊</span> Parâmetros Padrão</h3>
                         <ul>
-                            <li><strong>Populacao:</strong> 200 individuos</li>
-                            <li><strong>Mutacao:</strong> 60% de probabilidade</li>
-                            <li><strong>Geracoes:</strong> 1000 iteracoes</li>
+                            <li><strong>População:</strong> 200 (10% híbrida)</li>
+                            <li><strong>Mutação:</strong> 60%, 1-3 por indivíduo</li>
+                            <li><strong>Gerações:</strong> max 1000 (parada antecipada)</li>
                             <li><strong>Torneio:</strong> 5 competidores</li>
-                            <li><strong>Elitismo:</strong> preserva top 10%</li>
+                            <li><strong>Elitismo:</strong> 2 melhores + 2-opt</li>
                         </ul>
                     </div>
                 </div>
@@ -496,7 +496,7 @@
         <div class="slide slide-content" data-slide="3">
             <div class="slide-header">
                 <h2>O Problema: TSP e VRP</h2>
-                <div class="subtitle">Desafios de otimizacao combinatoria</div>
+                <div class="subtitle">Desafios de otimização combinatória</div>
             </div>
             <div class="content-grid">
                 <div class="card">
@@ -507,18 +507,18 @@
                         <li>Retorne ao ponto de partida</li>
                     </ul>
                     <div class="highlight-box" style="margin-top: 15px;">
-                        <strong>Complexidade:</strong> Com 10 cidades = 3.628.800 rotas possiveis (10!)
-                        <br>Com 20 cidades = 2 quintilhoes de combinacoes!
+                        <strong>Complexidade:</strong> Com 10 cidades = 3.628.800 rotas possíveis (10!)
+                        <br>Com 20 cidades = 2 quintilhões de combinações!
                     </div>
                 </div>
                 <div class="card">
-                    <h3><span class="icon">🚚</span> VRP - Roteamento de Veiculos</h3>
-                    <p>Extensao do TSP com multiplas restricoes:</p>
+                    <h3><span class="icon">🚚</span> VRP - Roteamento de Veículos</h3>
+                    <p>Extensão do TSP com múltiplas restrições:</p>
                     <ul>
-                        <li><strong>Multiplos veiculos:</strong> Entregas simultaneas</li>
-                        <li><strong>Capacidade:</strong> Max 200 kg por veiculo</li>
+                        <li><strong>Múltiplos veículos:</strong> Entregas simultâneas</li>
+                        <li><strong>Capacidade:</strong> Max 200 kg por veículo</li>
                         <li><strong>Autonomia:</strong> Max 1500 px por viagem</li>
-                        <li><strong>Prioridades:</strong> Critico > Urgente > Normal</li>
+                        <li><strong>Prioridades:</strong> Crítico > Urgente > Normal</li>
                     </ul>
                 </div>
             </div>
@@ -527,27 +527,30 @@
         <!-- Slide 4: Distance & Population -->
         <div class="slide slide-content" data-slide="4">
             <div class="slide-header">
-                <h2>Etapa 1: Distancias e Populacao</h2>
-                <div class="subtitle">Capitulo 3 - Inicializacao do algoritmo</div>
+                <h2>Etapa 1: Distâncias e População</h2>
+                <div class="subtitle">Capítulo 3 - Inicialização do algoritmo</div>
             </div>
             <div class="content-grid">
                 <div class="card">
-                    <h3><span class="icon">📏</span> Calculo de Distancia</h3>
-                    <p>Distancia euclidiana entre dois pontos:</p>
+                    <h3><span class="icon">📏</span> Cálculo de Distância (OSRM)</h3>
+                    <p>Distância <strong>real de estrada</strong> via API OSRM:</p>
                     <div class="formula">
-                        d = √[(x₂ - x₁)² + (y₂ - y₁)²]
+                        matriz[i,j] = distância_estrada(coord_i → coord_j)
                     </div>
                     <div class="code-block">
-<span class="keyword">def</span> <span class="function">calculate_distance</span>(city1, city2):
-    <span class="keyword">return</span> math.<span class="function">sqrt</span>(
-        (city1[<span class="number">0</span>] - city2[<span class="number">0</span>])**<span class="number">2</span> +
-        (city1[<span class="number">1</span>] - city2[<span class="number">1</span>])**<span class="number">2</span>
-    )
+<span class="comment"># OSRM Table API - distâncias reais</span>
+url = <span class="string">f"osrm/table/v1/driving/{coords}"</span>
+response = requests.<span class="function">get</span>(url)
+matrix = np.<span class="function">array</span>(response[<span class="string">"distances"</span>])
+<span class="comment"># Retorna matriz NxN em metros</span>
+                    </div>
+                    <div class="highlight-box info" style="margin-top: 15px;">
+                        Usa OpenStreetMap para rotas reais, não linha reta!
                     </div>
                 </div>
                 <div class="card">
-                    <h3><span class="icon">👥</span> Populacao Inicial</h3>
-                    <p>Gera solucoes aleatorias para diversidade:</p>
+                    <h3><span class="icon">👥</span> População Inicial</h3>
+                    <p>Gera soluções aleatórias para diversidade:</p>
                     <div class="code-block">
 <span class="keyword">def</span> <span class="function">generate_random_population</span>(cities, size):
     population = []
@@ -558,45 +561,48 @@
     <span class="keyword">return</span> population
                     </div>
                     <div class="highlight-box info" style="margin-top: 15px;">
-                        Cada "shuffle" e uma rota diferente!
+                        Cada "shuffle" é uma rota diferente!
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 5: VRP Population -->
+        <!-- Slide 5: VRP Population - Hybrid -->
         <div class="slide slide-content" data-slide="5">
             <div class="slide-header">
-                <h2>Populacao para VRP</h2>
-                <div class="subtitle">Distribuicao round-robin entre veiculos</div>
+                <h2>População Híbrida para VRP</h2>
+                <div class="subtitle">10% heurística (Nearest Neighbor) + 90% aleatório</div>
             </div>
             <div class="content-grid">
                 <div class="card">
-                    <h3><span class="icon">🔄</span> Distribuicao Round-Robin</h3>
-                    <p>Para VRP, alem de embaralhar, distribuimos entre veiculos:</p>
+                    <h3><span class="icon">🎯</span> Nearest Neighbor (10%)</h3>
+                    <p>Gera soluções iniciais de qualidade:</p>
                     <div class="code-block">
-<span class="comment"># Distribui ciclicamente</span>
+<span class="comment"># Sempre visita o vizinho mais próximo</span>
+<span class="keyword">while</span> unvisited:
+    nearest = <span class="function">min</span>(unvisited,
+        key=<span class="keyword">lambda</span> x: distance[current, x])
+    route.<span class="function">append</span>(nearest)
+    current = nearest
+                    </div>
+                    <div class="highlight-box info" style="margin-top: 15px;">
+                        Começa com soluções boas → converge mais rápido!
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><span class="icon">🔀</span> Aleatório (90%)</h3>
+                    <p>Mantém diversidade genética:</p>
+                    <div class="code-block">
+<span class="comment"># Distribui ciclicamente (round-robin)</span>
 <span class="keyword">for</span> i, delivery <span class="keyword">in</span> <span class="function">enumerate</span>(shuffled):
     vehicle_idx = i % num_vehicles
     routes[vehicle_idx].<span class="function">append</span>(delivery)
                     </div>
-                </div>
-                <div class="card">
-                    <h3><span class="icon">📋</span> Exemplo com 6 entregas e 2 veiculos</h3>
-                    <div class="table-container">
-                        <table>
-                            <tr><th>Indice</th><th>Entrega</th><th>Veiculo (i % 2)</th></tr>
-                            <tr><td>0</td><td>E3</td><td>0</td></tr>
-                            <tr><td>1</td><td>E1</td><td>1</td></tr>
-                            <tr><td>2</td><td>E6</td><td>0</td></tr>
-                            <tr><td>3</td><td>E4</td><td>1</td></tr>
-                            <tr><td>4</td><td>E2</td><td>0</td></tr>
-                            <tr><td>5</td><td>E5</td><td>1</td></tr>
-                        </table>
+                    <div class="highlight-box" style="margin-top: 15px;">
+                        <strong>Por que híbrido?</strong><br>
+                        • Heurísticas: convergência rápida<br>
+                        • Aleatório: evita ótimos locais
                     </div>
-                    <p style="margin-top: 15px;"><strong>Resultado:</strong><br>
-                    Veiculo 0: [E3, E6, E2]<br>
-                    Veiculo 1: [E1, E4, E5]</p>
                 </div>
             </div>
         </div>
@@ -604,13 +610,13 @@
         <!-- Slide 6: Fitness -->
         <div class="slide slide-content" data-slide="6">
             <div class="slide-header">
-                <h2>Etapa 2: Funcao de Fitness</h2>
-                <div class="subtitle">Capitulo 4 - Avaliacao da qualidade das solucoes</div>
+                <h2>Etapa 2: Função de Fitness</h2>
+                <div class="subtitle">Capítulo 4 - Avaliação da qualidade das soluções</div>
             </div>
             <div class="content-full">
                 <div class="card" style="margin-bottom: 25px;">
-                    <h3><span class="icon">🎯</span> Fitness = Distancia + Penalidades</h3>
-                    <p>Menor valor = melhor solucao</p>
+                    <h3><span class="icon">🎯</span> Fitness = Distância + Penalidades</h3>
+                    <p>Menor valor = melhor solução</p>
                     <div class="formula">
                         fitness = distancia_total + pen_capacidade + pen_prioridade + pen_veiculos
                     </div>
@@ -621,24 +627,24 @@
                         <div class="table-container">
                             <table>
                                 <tr><th>Componente</th><th>Peso</th></tr>
-                                <tr><td>Distancia Total</td><td>1x</td></tr>
+                                <tr><td>Distância Total</td><td>1x</td></tr>
                                 <tr><td>Excesso de Capacidade</td><td>1000x por kg</td></tr>
                                 <tr><td>Excesso de Autonomia</td><td>1000x por px</td></tr>
-                                <tr><td>Prioridade Errada (Critico)</td><td>50x por posicao</td></tr>
-                                <tr><td>Prioridade Errada (Urgente)</td><td>20x por posicao</td></tr>
-                                <tr><td>Veiculo Utilizado</td><td>100x por veiculo</td></tr>
+                                <tr><td>Prioridade Errada (Crítico)</td><td>50x por posição</td></tr>
+                                <tr><td>Prioridade Errada (Urgente)</td><td>20x por posição</td></tr>
+                                <tr><td>Veículo Utilizado</td><td>100x por veículo</td></tr>
                             </table>
                         </div>
                     </div>
                     <div class="card">
                         <h3><span class="icon">📦</span> Exemplo de Penalidade</h3>
                         <div class="highlight-box">
-                            <strong>Capacidade maxima:</strong> 100 kg<br>
-                            <strong>Carga do veiculo:</strong> 120 kg<br><br>
+                            <strong>Capacidade máxima:</strong> 100 kg<br>
+                            <strong>Carga do veículo:</strong> 120 kg<br><br>
                             Excesso: 120 - 100 = <strong>20 kg</strong><br>
                             Penalidade: 20 × 1000 = <strong>20.000 pontos</strong>
                         </div>
-                        <p style="margin-top: 15px;">Isso forca o algoritmo a encontrar solucoes que respeitam as restricoes!</p>
+                        <p style="margin-top: 15px;">Isso força o algoritmo a encontrar soluções que respeitam as restrições!</p>
                     </div>
                 </div>
             </div>
@@ -647,14 +653,14 @@
         <!-- Slide 7: Selection -->
         <div class="slide slide-content" data-slide="7">
             <div class="slide-header">
-                <h2>Etapa 3: Selecao por Torneio</h2>
-                <div class="subtitle">Capitulo 4 - Escolha dos pais para reproducao</div>
+                <h2>Etapa 3: Seleção por Torneio</h2>
+                <div class="subtitle">Capítulo 4 - Escolha dos pais para reprodução</div>
             </div>
             <div class="content-grid">
                 <div class="card">
                     <h3><span class="icon">🏆</span> Como funciona o Torneio</h3>
                     <ol style="list-style: decimal; padding-left: 20px;">
-                        <li style="padding: 8px 0;">Seleciona aleatoriamente <strong>k</strong> individuos</li>
+                        <li style="padding: 8px 0;">Seleciona aleatoriamente <strong>k</strong> indivíduos</li>
                         <li style="padding: 8px 0;">Compara seus valores de fitness</li>
                         <li style="padding: 8px 0;">Retorna o <strong>melhor</strong> (menor fitness)</li>
                     </ol>
@@ -670,7 +676,7 @@
                     <h3><span class="icon">📊</span> Exemplo de Torneio (k=3)</h3>
                     <div class="table-container">
                         <table>
-                            <tr><th>Individuo</th><th>Fitness</th><th>Selecionado?</th></tr>
+                            <tr><th>Indivíduo</th><th>Fitness</th><th>Selecionado?</th></tr>
                             <tr><td>rota_A</td><td>500</td><td></td></tr>
                             <tr><td style="background: rgba(230,57,70,0.2);">rota_B</td><td style="background: rgba(230,57,70,0.2);">300</td><td style="background: rgba(230,57,70,0.2);">✓ Vencedor</td></tr>
                             <tr><td>rota_C</td><td>800</td><td></td></tr>
@@ -678,9 +684,9 @@
                     </div>
                     <div class="highlight-box info" style="margin-top: 20px;">
                         <strong>Tamanho do torneio:</strong><br>
-                        • Maior (10): Converge rapido, risco de otimo local<br>
+                        • Maior (10): Converge rápido, risco de ótimo local<br>
                         • Menor (2): Mais diversidade, converge devagar<br>
-                        • Padrao (3-5): Bom equilibrio
+                        • Padrão (3-5): Bom equilíbrio
                     </div>
                 </div>
             </div>
@@ -689,95 +695,51 @@
         <!-- Slide 8: Crossover -->
         <div class="slide slide-content" data-slide="8">
             <div class="slide-header">
-                <h2>Etapa 4: Crossover (Recombinacao)</h2>
-                <div class="subtitle">Capitulo 5 - Combinando caracteristicas dos pais</div>
+                <h2>Etapa 4: Crossover (Route-Based)</h2>
+                <div class="subtitle">Preservando rotas inteiras dos pais</div>
             </div>
             <div class="content-full">
                 <div class="card" style="margin-bottom: 25px;">
-                    <h3><span class="icon">⚠️</span> O Desafio Especial do TSP</h3>
-                    <div class="mutation-viz" style="justify-content: flex-start;">
-                        <span>Pai 1: [A, B, C, D, E]</span>
-                        <span style="margin-left: 20px;">Pai 2: [E, D, C, B, A]</span>
-                    </div>
+                    <h3><span class="icon">⚠️</span> O Problema do Crossover Tradicional</h3>
                     <div class="highlight-box" style="margin-top: 15px;">
-                        <strong>Crossover ingenuo:</strong> [A, B, C] + [B, A] = [A, B, C, B, A] ❌<br>
-                        Erro! B e A aparecem 2x, D e E faltam!
+                        <strong>OX/PMX destroém rotas!</strong> Se o Pai 1 tem uma rota ótima [A, B, C] para um cluster geográfico, ela seria fragmentada.<br><br>
+                        Crossover tradicional = praticamente reinicialização aleatória!
                     </div>
-                    <p style="margin-top: 15px;">Cada cidade deve aparecer <strong>exatamente uma vez</strong>. Precisamos de operadores especializados!</p>
                 </div>
                 <div class="content-grid">
                     <div class="card">
-                        <h3><span class="icon">🔀</span> Order Crossover (OX)</h3>
-                        <p>Preserva a <strong>ordem relativa</strong> dos genes:</p>
+                        <h3><span class="icon">🛣️</span> Route-Based Crossover</h3>
+                        <p>Preserva <strong>rotas inteiras</strong> de um pai:</p>
                         <ol style="list-style: decimal; padding-left: 20px; margin-top: 10px;">
-                            <li style="padding: 5px 0;">Escolhe dois pontos de corte</li>
-                            <li style="padding: 5px 0;">Copia segmento do Pai 1</li>
-                            <li style="padding: 5px 0;">Preenche resto com Pai 2 (sem duplicar)</li>
+                            <li style="padding: 5px 0;">Seleciona k rotas completas do Pai 1</li>
+                            <li style="padding: 5px 0;">Identifica locais já atribuídos</li>
+                            <li style="padding: 5px 0;">Preenche restantes mantendo ordem do Pai 2</li>
                         </ol>
+                        <div class="highlight-box info" style="margin-top: 15px;">
+                            Preserva clusters geográficos e boas atribuições!
+                        </div>
                     </div>
                     <div class="card">
-                        <h3><span class="icon">🗺️</span> PMX Crossover</h3>
-                        <p>Preserva as <strong>posicoes absolutas</strong>:</p>
+                        <h3><span class="icon">✅</span> Vantagens</h3>
                         <ul>
-                            <li>Usa mapeamento para resolver conflitos</li>
-                            <li>Mais complexo que OX</li>
-                            <li>Alternativo no projeto</li>
+                            <li>Mantém estrutura das rotas</li>
+                            <li>Preserva agrupamentos geográficos</li>
+                            <li>Convergência mais rápida</li>
+                            <li>Melhor qualidade das soluções</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 9: Crossover Example -->
+        <!-- Slide 9: Mutation -->
         <div class="slide slide-content" data-slide="9">
             <div class="slide-header">
-                <h2>Order Crossover (OX) - Exemplo</h2>
-                <div class="subtitle">Passo a passo do funcionamento</div>
+                <h2>Etapa 5: Mutação (1-3x por indivíduo)</h2>
+                <div class="subtitle">Múltiplas mutações para explorar melhor o espaço de busca</div>
             </div>
             <div class="content-full">
-                <div class="card">
-                    <div style="display: flex; flex-direction: column; gap: 20px;">
-                        <div>
-                            <strong>Pais:</strong>
-                            <div class="mutation-viz">
-                                <span>Pai 1: [A, B, <span style="color: var(--primary);">C, D, E</span>, F, G, H]</span>
-                                <span style="margin-left: 30px;">Pai 2: [C, G, A, H, B, D, F, E]</span>
-                            </div>
-                        </div>
-                        <div>
-                            <strong>Passo 1:</strong> Selecao aleatoria: start=2, end=5
-                            <div class="mutation-viz">
-                                <span>Filho: [_, _, <span style="color: var(--primary);">C, D, E</span>, _, _, _]</span>
-                            </div>
-                        </div>
-                        <div>
-                            <strong>Passo 2:</strong> Preencher com Pai 2 (ordem: H, B, D, F, E, C, G, A)
-                            <ul style="margin-top: 10px;">
-                                <li>H nao esta → adiciona</li>
-                                <li>B nao esta → adiciona</li>
-                                <li>D, E, C ja estao → pula</li>
-                                <li>G, A, F nao estao → adiciona</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <strong>Resultado Final:</strong>
-                            <div class="mutation-viz">
-                                <span style="font-size: 1.2rem; color: var(--primary);">Filho: [G, A, C, D, E, F, H, B]</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 10: Mutation -->
-        <div class="slide slide-content" data-slide="10">
-            <div class="slide-header">
-                <h2>Etapa 5: Mutacao</h2>
-                <div class="subtitle">Capitulo 5 - Introduzindo variacao aleatoria</div>
-            </div>
-            <div class="content-full">
-                <p style="margin-bottom: 25px;">O VRP usa <strong>4 tipos diferentes</strong> de mutacao, escolhidos aleatoriamente:</p>
+                <p style="margin-bottom: 25px;">Cada indivíduo recebe <strong>1 a 3 mutações</strong> de <strong>4 tipos diferentes</strong>:</p>
                 <div class="content-grid">
                     <div class="card">
                         <h3><span class="icon">1️⃣</span> swap_within</h3>
@@ -813,7 +775,7 @@
                     </div>
                     <div class="card">
                         <h3><span class="icon">3️⃣</span> reverse</h3>
-                        <p>Inverte subsequencia (2-opt)</p>
+                        <p>Inverte subsequência (2-opt)</p>
                         <div class="mutation-viz">
                             <div class="mutation-before">
                                 <span class="mutation-item">E1</span>
@@ -849,161 +811,102 @@
             </div>
         </div>
 
-        <!-- Slide 11: Elitism -->
+        <!-- Slide 10: Elitism + 2-opt -->
+        <div class="slide slide-content" data-slide="10">
+            <div class="slide-header">
+                <h2>Elitismo + Busca Local (2-opt)</h2>
+                <div class="subtitle">Preservando e refinando as melhores soluções</div>
+            </div>
+            <div class="content-grid">
+                <div class="card">
+                    <h3><span class="icon">👑</span> Elitismo com Deep Copy</h3>
+                    <p>Preserva os <strong>2 melhores</strong> indivíduos com cópia segura:</p>
+                    <div class="code-block" style="margin-top: 15px;">
+<span class="comment"># Deep copy dos elites (evita corrupção)</span>
+elites = [
+    [route.<span class="function">copy</span>() <span class="keyword">for</span> route <span class="keyword">in</span> ind]
+    <span class="keyword">for</span> ind <span class="keyword">in</span> population[:elitism_count]
+]
+
+<span class="comment"># Aplica 2-opt nos elites</span>
+<span class="keyword">for</span> elite <span class="keyword">in</span> elites:
+    elite = <span class="function">apply_local_search</span>(elite)
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><span class="icon">🔧</span> Busca Local 2-opt</h3>
+                    <p>Refina rotas removendo cruzamentos:</p>
+                    <div class="mutation-viz">
+                        <div class="mutation-before">
+                            <span class="mutation-item">A</span>
+                            <span class="mutation-item highlight">B</span>
+                            <span class="mutation-item highlight">C</span>
+                            <span class="mutation-item">D</span>
+                        </div>
+                        <span class="mutation-arrow">→</span>
+                        <div class="mutation-after">
+                            <span class="mutation-item">A</span>
+                            <span class="mutation-item highlight">C</span>
+                            <span class="mutation-item highlight">B</span>
+                            <span class="mutation-item">D</span>
+                        </div>
+                    </div>
+                    <div class="highlight-box info" style="margin-top: 15px;">
+                        <strong>2-opt:</strong> Inverte segmentos até não haver mais melhoria. Elimina arestas que se cruzam!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Early Convergence -->
         <div class="slide slide-content" data-slide="11">
             <div class="slide-header">
-                <h2>Elitismo e Loop Principal</h2>
-                <div class="subtitle">Preservando as melhores solucoes</div>
+                <h2>Convergência Antecipada</h2>
+                <div class="subtitle">Parando automaticamente quando não há mais melhoria</div>
             </div>
             <div class="content-grid">
                 <div class="card">
-                    <h3><span class="icon">👑</span> O que e Elitismo?</h3>
-                    <p>Preserva os <strong>melhores individuos</strong> de uma geracao para a proxima, garantindo que nunca perdemos uma boa solucao.</p>
+                    <h3><span class="icon">⏱️</span> Detecção de Estagnação</h3>
+                    <p>O algoritmo para automaticamente após <strong>N gerações</strong> sem melhoria:</p>
                     <div class="code-block" style="margin-top: 15px;">
-<span class="comment"># Preservar os 10% melhores</span>
-elite_size = POPULATION_SIZE // <span class="number">10</span>
-new_population = population[:elite_size]
-
-<span class="comment"># Preencher resto com filhos</span>
-<span class="keyword">while</span> <span class="function">len</span>(new_population) < POPULATION_SIZE:
-    parent1 = <span class="function">tournament_selection</span>(...)
-    parent2 = <span class="function">tournament_selection</span>(...)
-    child = <span class="function">crossover</span>(parent1, parent2)
-    child = <span class="function">mutate</span>(child)
-    new_population.<span class="function">append</span>(child)
+<span class="keyword">if</span> <span class="function">abs</span>(current_best - previous_best) < <span class="number">1e-6</span>:
+    stagnation_counter += <span class="number">1</span>
+    <span class="keyword">if</span> stagnation_counter >= N:
+        <span class="keyword">break</span>  <span class="comment"># Para antecipadamente!</span>
+<span class="keyword">else</span>:
+    stagnation_counter = <span class="number">0</span>
+                    </div>
+                    <div class="highlight-box info" style="margin-top: 15px;">
+                        Pode reduzir tempo de execução em <strong>50-80%</strong>!
                     </div>
                 </div>
                 <div class="card">
-                    <h3><span class="icon">📈</span> Importancia do Elitismo</h3>
+                    <h3><span class="icon">📊</span> Exemplo de Economia</h3>
                     <div class="table-container">
                         <table>
-                            <tr><th>Geracao</th><th>Sem Elitismo</th><th>Com Elitismo</th></tr>
-                            <tr><td>1</td><td>Fitness = 500</td><td>Fitness = 500 ✓</td></tr>
-                            <tr><td>2</td><td style="color: var(--primary);">Fitness = 600 ❌</td><td>Fitness = 480 ✓</td></tr>
+                            <tr><th>Cenário</th><th>Gerações</th><th>Tempo</th></tr>
+                            <tr><td>Sem parada antecipada</td><td>1000</td><td>100%</td></tr>
+                            <tr><td style="color: var(--primary);">Com parada antecipada</td><td style="color: var(--primary);">~200</td><td style="color: var(--primary);">~20%</td></tr>
                         </table>
                     </div>
-                    <div class="highlight-box" style="margin-top: 20px;">
-                        <strong>Sem elitismo:</strong> Boas solucoes podem ser perdidas entre geracoes, causando regressao na qualidade!
+                    <div class="highlight-box" style="margin-top: 15px;">
+                        <strong>Atributos úteis:</strong><br>
+                        • <code>solver.converged</code> → True se parou por estagnação<br>
+                        • <code>solver.final_epoch</code> → Geração final executada
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 12: Convergence -->
-        <div class="slide slide-content" data-slide="12">
-            <div class="slide-header">
-                <h2>Convergencia do Algoritmo</h2>
-                <div class="subtitle">Evolucao da qualidade ao longo das geracoes</div>
-            </div>
-            <div class="content-grid">
-                <div class="card">
-                    <h3><span class="icon">📉</span> Grafico Tipico de Convergencia</h3>
-                    <div style="background: #0D1117; border-radius: 12px; padding: 30px; margin-top: 15px;">
-                        <svg viewBox="0 0 400 200" style="width: 100%; height: auto;">
-                            <!-- Grid -->
-                            <line x1="50" y1="20" x2="50" y2="170" stroke="#333" stroke-width="1"/>
-                            <line x1="50" y1="170" x2="380" y2="170" stroke="#333" stroke-width="1"/>
-                            <!-- Labels -->
-                            <text x="200" y="195" fill="#888" font-size="12" text-anchor="middle">Geracoes</text>
-                            <text x="20" y="100" fill="#888" font-size="12" text-anchor="middle" transform="rotate(-90, 20, 100)">Fitness</text>
-                            <!-- Curve -->
-                            <path d="M 50 30 Q 100 40, 150 80 T 250 140 T 380 160" fill="none" stroke="#E63946" stroke-width="3"/>
-                            <!-- Points -->
-                            <circle cx="50" cy="30" r="4" fill="#E63946"/>
-                            <circle cx="150" cy="80" r="4" fill="#E63946"/>
-                            <circle cx="250" cy="140" r="4" fill="#E63946"/>
-                            <circle cx="380" cy="160" r="4" fill="#E63946"/>
-                        </svg>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3><span class="icon">🔄</span> Fases da Convergencia</h3>
-                    <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <div style="width: 60px; height: 40px; background: var(--gradient-1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600;">1</div>
-                            <div>
-                                <strong>Inicio:</strong> Melhoria rapida<br>
-                                <span style="opacity: 0.7;">Muita "gordura" para cortar</span>
-                            </div>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <div style="width: 60px; height: 40px; background: var(--gradient-2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600;">2</div>
-                            <div>
-                                <strong>Meio:</strong> Melhoria mais lenta<br>
-                                <span style="opacity: 0.7;">Otimizacoes finas</span>
-                            </div>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <div style="width: 60px; height: 40px; background: var(--gradient-3); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600;">3</div>
-                            <div>
-                                <strong>Fim:</strong> Estabilizacao<br>
-                                <span style="opacity: 0.7;">Proximo do otimo</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 13: Summary -->
-        <div class="slide slide-content" data-slide="13">
-            <div class="slide-header">
-                <h2>Resumo: Fluxo Completo</h2>
-                <div class="subtitle">Da populacao inicial a solucao otimizada</div>
-            </div>
-            <div class="content-full">
-                <div class="flow-diagram" style="margin-bottom: 30px;">
-                    <div class="flow-box">1. Gera Populacao</div>
-                    <span class="flow-arrow">→</span>
-                    <div class="flow-box">2. Avalia Fitness</div>
-                    <span class="flow-arrow">→</span>
-                    <div class="flow-box">3. Seleciona Pais</div>
-                    <span class="flow-arrow">→</span>
-                    <div class="flow-box">4. Crossover</div>
-                    <span class="flow-arrow">→</span>
-                    <div class="flow-box">5. Mutacao</div>
-                    <span class="flow-arrow">→</span>
-                    <div class="flow-box">6. Elitismo</div>
-                    <span class="flow-arrow">→</span>
-                    <div class="flow-box highlight">Repete!</div>
-                </div>
-                <div class="content-three-cols">
-                    <div class="card">
-                        <h3><span class="icon">✅</span> Vantagens</h3>
-                        <ul>
-                            <li>Encontra boas solucoes rapidamente</li>
-                            <li>Escalavel para problemas grandes</li>
-                            <li>Flexivel para diferentes restricoes</li>
-                            <li>Paralelizavel</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3><span class="icon">⚙️</span> Parametros-chave</h3>
-                        <ul>
-                            <li>Populacao: 200</li>
-                            <li>Mutacao: 60%</li>
-                            <li>Geracoes: 1000</li>
-                            <li>Torneio: 5</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3><span class="icon">🎯</span> Resultado</h3>
-                        <p>Uma <strong>boa solucao</strong> (nao necessariamente otima) encontrada em <strong>tempo razoavel</strong>, adequada para aplicacoes praticas de logistica.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 14: Thank You -->
-        <div class="slide slide-title" data-slide="14">
+        <!-- Slide 12: Thank You -->
+        <div class="slide slide-title" data-slide="12">
             <h1>Obrigado!</h1>
-            <h2>Perguntas?</h2>
             <div class="badge" style="margin-top: 40px;">
                 github.com/Zagari/routing-optimizer-ai
             </div>
             <div class="team" style="margin-top: 40px;">
                 Tech Challenge - Fase 2 | FIAP<br>
-                Pos-Graduacao em Inteligencia Artificial para Devs<br><br>
+                Pós-Graduação em Inteligência Artificial para Devs<br><br>
                 Janeiro de 2026
             </div>
         </div>
@@ -1013,7 +916,7 @@ new_population = population[:elite_size]
     <div class="nav-container">
         <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">←</button>
         <div class="progress-dots" id="progressDots"></div>
-        <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">14</span></span>
+        <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">12</span></span>
         <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">→</button>
     </div>
 
@@ -1021,7 +924,7 @@ new_population = population[:elite_size]
 
     <script>
         let currentSlide = 1;
-        const totalSlides = 14;
+        const totalSlides = 12;
 
         // Initialize dots
         const dotsContainer = document.getElementById('progressDots');

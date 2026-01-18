@@ -62,7 +62,7 @@ with col_map_opt1:
     )
 with col_map_opt2:
     if use_real_roads:
-        st.info("⏳ Buscando rotas reais de estrada... Isso pode levar alguns segundos.")
+        st.info("⏳ Buscando rotas reais de estrada... Isso pode levar alguns segundos. Para resultado mais rápido, desmarque a opção ao lado.")
 
 # Criar mapa
 with st.spinner("Gerando mapa..."):
