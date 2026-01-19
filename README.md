@@ -67,8 +67,9 @@ from routing_optimizer.genetic_algorithm import VRPSolver, GAConfig
 # Configurar o solver
 config = GAConfig(
     population_size=100,
-    max_epochs=500,
-    mutation_probability=0.6
+    max_epochs=500,  # Suporta até 10.000
+    mutation_probability=0.6,
+    stagnation_threshold=100  # Ou None para usar 20% de max_epochs
 )
 solver = VRPSolver(config)
 
@@ -132,10 +133,22 @@ pytest -m "not integration"
 
 ## Algoritmos Implementados
 
-1. **Algoritmo Genético (AG)** - Nossa solução principal
+1. **Algoritmo Genético (AG)** - Nossa solução principal, com 6 melhorias:
+   - Inicialização híbrida (10% Nearest Neighbor + 90% aleatória)
+   - Route-Based Crossover (preserva rotas inteiras)
+   - Múltiplas mutações (1-3 por indivíduo)
+   - Busca local 2-opt nos elites
+   - Deep copy no elitismo
+   - Convergência antecipada (early stopping)
 2. **Random** - Baseline mínimo
 3. **Nearest Neighbor** - Heurística gulosa
 4. **Clarke-Wright Savings** - Clássico para VRP
+
+## Documentação Técnica
+
+Para detalhes sobre a implementação do Algoritmo Genético, consulte o relatório técnico:
+
+📄 [docs/relatorio_algoritmo_genetico.pdf](./docs/relatorio_algoritmo_genetico.pdf)
 
 ## Licença
 
