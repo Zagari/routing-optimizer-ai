@@ -150,7 +150,7 @@ Para detalhes sobre a implementação do Algoritmo Genético, consulte o relató
 
 📄 [docs/relatorio_algoritmo_genetico.pdf](./docs/relatorio_algoritmo_genetico.pdf)
 
-▶️ [Vídeo demonstrativo](LinkparavÃŋdeodemonstrativodosistema)
+▶️ [Vídeo demonstrativo](https://www.youtube.com/watch?v=ZXJC8kMe_Sc)
 
 🔑 Chave OpenAI: necessário usar chave própria para executar a integração com IA Generativa ou solicitá-la via Discord aos integrantes do grupo:
 
