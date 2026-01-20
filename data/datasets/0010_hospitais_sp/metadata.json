@@ -1,6 +1,6 @@
 {
-  "name": "0010hospitais_sp",
-  "original_filename": "0010-hospitais_SP.csv",
+  "name": "0010_hospitais_sp",
+  "original_filename": "0010_hospitais_SP.csv",
   "created_at": "2026-01-18T04:00:14.832731",
   "address_column": "Endereco",
   "name_column": null,

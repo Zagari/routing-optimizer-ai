@@ -1,0 +1,34 @@
+[
+  {
+    "original_address": "Av. Paulista, 1000, São Paulo, SP",
+    "latitude": -23.5648865,
+    "longitude": -46.651918,
+    "formatted_address": "Edifício Paulista Mil, 1000, Avenida Paulista, Morro dos Ingleses, Bela Vista, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 01310-100, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Av. Dr. Enéas Carvalho de Aguiar, 255, Cerqueira César, São Paulo/SP, 05403-000",
+    "latitude": -23.5560149,
+    "longitude": -46.6710487,
+    "formatted_address": "Avenida Doutor Eneas Carvalho de Aguiar, Cerqueira César, Jardim Paulista, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 05403-000, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Rua Dona Adma Jafet, 115 - Bela Vista, São Paulo",
+    "latitude": -23.5575141,
+    "longitude": -46.6538225,
+    "formatted_address": "Hospital Sírio Libanês, 115, Rua Dona Adma Jafet, Morro dos Ingleses, Bela Vista, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 01308-050, Brasil",
+    "success": true,
+    "error": null
+  },
+  {
+    "original_address": "Avenida Albert Einstein, 627, Morumbi, São Paulo",
+    "latitude": -23.5968283,
+    "longitude": -46.7158007,
+    "formatted_address": "Avenida Albert Einstein, Cidade Jardim, Morumbi, São Paulo, Região Imediata de São Paulo, Região Metropolitana de São Paulo, Região Geográfica Intermediária de São Paulo, São Paulo, Região Sudeste, 05651-001, Brasil",
+    "success": true,
+    "error": null
+  }
+]

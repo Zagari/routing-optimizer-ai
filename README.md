@@ -144,12 +144,21 @@ pytest -m "not integration"
 3. **Nearest Neighbor** - Heurística gulosa
 4. **Clarke-Wright Savings** - Clássico para VRP
 
-## Documentação Técnica
+## Documentação Técnica e Materiais
 
 Para detalhes sobre a implementação do Algoritmo Genético, consulte o relatório técnico:
 
 📄 [docs/relatorio_algoritmo_genetico.pdf](./docs/relatorio_algoritmo_genetico.pdf)
 
+▶️ [Vídeo demonstrativo](LinkparavÃŋdeodemonstrativodosistema)
+
+🔑 Chave OpenAI: necessário usar chave própria para executar a integração com IA Generativa ou solicitá-la via Discord aos integrantes do grupo:
+
+Adriana Martins de Souza - RM 368050 \
+Diego Oliveira da Silva RM 367964 \
+Eduardo Nicola F. Zagari - RM 368021 \
+Renan de Assis Torres - RM 368513
+
 ## Licença
 
-Este projeto foi desenvolvido para fins acadêmicos como parte do Tech Challenge FIAP.
+Este projeto foi desenvolvido para fins acadêmicos como parte do Tech Challenge FIAP sob licença MIT.

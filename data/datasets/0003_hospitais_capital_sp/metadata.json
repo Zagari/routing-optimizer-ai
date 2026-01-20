@@ -1,0 +1,11 @@
+{
+  "name": "0003_hospitais_capital_sp",
+  "original_filename": "0003_hospitais_capital_SP.csv",
+  "created_at": "2026-01-19T23:37:12.262471",
+  "address_column": "enderecos",
+  "name_column": null,
+  "depot_address": "Av. Paulista, 1000, São Paulo, SP",
+  "total_locations": 4,
+  "geocoded_count": 4,
+  "has_distance_matrix": true
+}
