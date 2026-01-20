@@ -4,12 +4,20 @@ Page 3: Visualize optimized routes on map.
 
 import os
 
-import pandas as pd
 import streamlit as st
+
+# Show loading indicator immediately while heavy imports load
+_loading_placeholder = st.empty()
+_loading_placeholder.info("⏳ Carregando módulos de visualização...")
+
+import pandas as pd
 from streamlit_folium import st_folium
 
 from routing_optimizer.app.components.map_view import create_route_map
 from routing_optimizer.routing.distance import meters_to_km
+
+# Clear loading indicator
+_loading_placeholder.empty()
 
 # Configuração padrão para rotas reais (do .env)
 DEFAULT_USE_REAL_ROADS = os.getenv("MAP_USE_REAL_ROADS", "false").lower() == "true"

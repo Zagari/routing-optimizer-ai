@@ -177,13 +177,21 @@ def _regeocode_corrected(df, original_results, address_column):
 
 def _render_correction_interface(df, results, errors, address_column):
     """Render the address correction interface."""
-    from routing_optimizer.llm.openai_client import RouteAssistant
+    # Lazy import to avoid loading OpenAI SDK on page load
+    from routing_optimizer.app.utils import get_assistant, render_api_key_input
 
-    assistant = RouteAssistant()
+    assistant = get_assistant()
 
     if not assistant.is_configured():
-        st.error("⚠️ OPENAI_API_KEY não configurada! O assistente não está disponível.")
-        return
+        render_api_key_input(
+            show_stop=False,
+            context_message="O assistente de correcao de enderecos usa IA para sugerir correcoes.",
+        )
+        # Re-check after potential input
+        assistant = get_assistant()
+        if not assistant.is_configured():
+            st.info("Voce pode continuar sem o assistente clicando em **'Continuar com os enderecos validos'**.")
+            return
 
     # Get current error index
     correction_index = st.session_state.get("_correction_index", 0)

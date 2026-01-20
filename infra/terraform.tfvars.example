@@ -1,0 +1,10 @@
+# Copie este arquivo para terraform.tfvars e preencha os valores
+# NUNCA commite terraform.tfvars no repositorio!
+
+aws_region       = "us-east-1"
+project_name     = "routing-optimizer"
+instance_type    = "t3.small"
+openai_api_key   = "sk-your-key-here"  # Sua chave OpenAI
+domain_name      = ""                   # Opcional: seu dominio
+ssh_allowed_cidr = "YOUR_IP/32"         # Substitua pelo seu IP
+github_repo      = "https://github.com/Zagari/routing-optimizer-ai.git"

@@ -4,36 +4,32 @@ Page 4: Generate driver instructions and efficiency reports using LLM.
 
 import streamlit as st
 
-from routing_optimizer.llm.openai_client import RouteAssistant
+# Show loading indicator immediately while heavy imports load
+_loading_placeholder = st.empty()
+_loading_placeholder.info("⏳ Carregando módulos de IA...")
+
+from routing_optimizer.app.utils import get_assistant, render_api_key_input
 from routing_optimizer.routing.distance import meters_to_km
 
-st.title("📝 Instruções e Relatórios com IA")
+# Clear loading indicator
+_loading_placeholder.empty()
+
+st.title("Instrucoes e Relatorios com IA")
 
 # Verificar se otimização foi executada
 if "routes" not in st.session_state:
-    st.warning("⚠️ Primeiro execute a otimização na página **Otimização de Rotas**.")
-    st.info("Use o menu lateral para navegar até a página de Otimização de Rotas.")
+    st.warning("Primeiro execute a otimizacao na pagina **Otimizacao de Rotas**.")
+    st.info("Use o menu lateral para navegar ate a pagina de Otimizacao de Rotas.")
     st.stop()
 
 # Verificar API key
-assistant = RouteAssistant()
+assistant = get_assistant()
 if not assistant.is_configured():
-    st.error("⚠️ OPENAI_API_KEY não configurada!")
-    st.markdown(
-        """
-    Para usar esta funcionalidade, configure a variável de ambiente:
+    render_api_key_input(show_stop=True)
+    # render_api_key_input calls st.stop() or st.rerun()
 
-    ```bash
-    export OPENAI_API_KEY="sua-chave-aqui"
-    ```
-
-    Ou crie um arquivo `.env` na raiz do projeto:
-    ```
-    OPENAI_API_KEY=sua-chave-aqui
-    ```
-    """
-    )
-    st.stop()
+# Re-get assistant after potential rerun (key may have been saved to session)
+assistant = get_assistant()
 
 # Recuperar dados
 routes = st.session_state["routes"]

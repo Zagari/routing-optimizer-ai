@@ -2,14 +2,22 @@
 Page 5: Run comparative experiments between VRP algorithms.
 """
 
+import streamlit as st
+
+# Show loading indicator immediately while heavy imports load
+_loading_placeholder = st.empty()
+_loading_placeholder.info("⏳ Carregando módulos de experimentos...")
+
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-import streamlit as st
 
 from routing_optimizer.experiments.runner import ExperimentRunner
 from routing_optimizer.genetic_algorithm.config import GAConfig
 from routing_optimizer.routing.distance import meters_to_km
+
+# Clear loading indicator
+_loading_placeholder.empty()
 
 st.title("📊 Experimentos e Comparativos")
 

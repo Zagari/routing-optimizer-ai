@@ -9,6 +9,8 @@ from typing import List, Optional
 from dotenv import load_dotenv
 from openai import OpenAI
 
+from routing_optimizer.utils.secrets import get_openai_api_key
+
 # Load environment variables from .env file
 # Try project root first, then current directory
 _current_file = Path(__file__).resolve()
@@ -43,10 +45,11 @@ class RouteAssistant:
         """Initialize the RouteAssistant.
 
         Args:
-            api_key: OpenAI API key. If None, uses OPENAI_API_KEY env var.
+            api_key: OpenAI API key. If None, tries AWS Secrets Manager,
+                     then OPENAI_API_KEY env var.
             model: Model to use. If None, uses DEFAULT_MODEL.
         """
-        self.api_key = api_key or os.getenv("OPENAI_API_KEY")
+        self.api_key = api_key or get_openai_api_key()
         self._client: Optional[OpenAI] = None
         self.model = model or self.DEFAULT_MODEL
 
@@ -214,6 +217,30 @@ conhecimento sobre logistica e distribuicao farmaceutica."""
             True if API key is set, False otherwise.
         """
         return bool(self.api_key)
+
+    def validate_api_key(self) -> tuple:
+        """Validate the API key by making a minimal API call.
+
+        Returns:
+            Tuple of (is_valid, error_message).
+            If valid, returns (True, "").
+            If invalid, returns (False, "error description").
+        """
+        if not self.api_key:
+            return False, "API key não fornecida"
+
+        try:
+            # Minimal API call to validate the key
+            self.client.models.list()
+            return True, ""
+        except Exception as e:
+            error_msg = str(e)
+            if "invalid_api_key" in error_msg.lower() or "401" in error_msg:
+                return False, "API key inválida"
+            elif "insufficient_quota" in error_msg.lower():
+                return False, "API key sem créditos disponíveis"
+            else:
+                return False, f"Erro ao validar: {error_msg[:100]}"
 
     def suggest_address_corrections(
         self,

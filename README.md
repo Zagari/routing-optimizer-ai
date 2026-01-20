@@ -159,6 +159,44 @@ Diego Oliveira da Silva RM 367964 \
 Eduardo Nicola F. Zagari - RM 368021 \
 Renan de Assis Torres - RM 368513
 
+## BÔNUS: Deploy em Nuvem
+
+A aplicação está disponível online para demonstração (somente http://, sem https://):
+
+🌐 **http://44.210.247.81:8501**
+
+### Infraestrutura como Código (Terraform)
+
+O diretório `infra/` contém código Terraform para deploy da aplicação em sua própria conta AWS:
+
+- **EC2** (t3.small) com Amazon Linux 2023
+- **AWS Secrets Manager** para armazenamento seguro da API Key OpenAI
+- **Security Group** configurado para HTTP/HTTPS/SSH
+- **Elastic IP** para endereço fixo
+- **nginx** como reverse proxy
+- **systemd** para gerenciamento do serviço
+
+#### Deploy Rápido
+
+```bash
+# 1. Configurar credenciais AWS
+aws configure
+
+# 2. Configurar variáveis
+cd infra
+cp terraform.tfvars.example terraform.tfvars
+# Edite terraform.tfvars com sua OPENAI_API_KEY
+
+# 3. Deploy
+terraform init
+terraform apply
+
+# 4. Destruir (quando não precisar mais)
+terraform destroy
+```
+
+Custo estimado: ~$16-20/mês (EC2 t3.small + Secrets Manager)
+
 ## Licença
 
 Este projeto foi desenvolvido para fins acadêmicos como parte do Tech Challenge FIAP sob licença MIT.
