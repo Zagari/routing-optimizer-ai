@@ -163,7 +163,7 @@ Renan de Assis Torres - RM 368513
 
 A aplicação está disponível online para demonstração (somente http://, sem https://):
 
-🌐 **http://44.210.247.81:8501**
+🌐 **http://100.30.130.165:8501**
 
 ### Infraestrutura como Código (Terraform)
 

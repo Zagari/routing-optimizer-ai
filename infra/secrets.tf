@@ -3,7 +3,7 @@ resource "aws_secretsmanager_secret" "openai_key" {
   name        = "${var.project_name}/openai-api-key"
   description = "OpenAI API key for Routing Optimizer"
 
-  recovery_window_in_days = 7
+  recovery_window_in_days = 0  # Permite deleção imediata (sem período de recuperação)
 
   tags = {
     Name = "${var.project_name}-openai-secret"
